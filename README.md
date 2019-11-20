@@ -22,6 +22,7 @@
  7. Player list - will be displayed to users when viewing the event
  
  # Usage scenario
+https://docs.google.com/document/d/1KB5pbM08l70RSw1qx0PH6tyYgKiSLv7NMnflw-DK6FM/edit
 
 # If we have time
  1. Statistics in user profile
