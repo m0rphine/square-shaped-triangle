@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1008675734415",
+    "firebase_url": "https://square-shaped-triangle.firebaseio.com",
+    "project_id": "square-shaped-triangle",
+    "storage_bucket": "square-shaped-triangle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008675734415:android:5140ce25abb35a3416c1fa",
+        "android_client_info": {
+          "package_name": "com.example.square_shaped_triangle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008675734415-c7f9kgpjfjsg7ik1ocr9f2kqkj1tuu6u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.square_shaped_triangle",
+            "certificate_hash": "aa11892e8ae7a369d818197ff59d15639452e48f"
+          }
+        },
+        {
+          "client_id": "1008675734415-61im6vake6pauvbc40g7o25r6o3o0nan.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmFL51VlMnMdfg001-I1zPQPZvcCXwU-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008675734415-61im6vake6pauvbc40g7o25r6o3o0nan.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

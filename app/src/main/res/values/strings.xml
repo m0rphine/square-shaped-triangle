@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">square-shaped-triangle</string>
+    <string name="sign_in">Sign in</string>
+    <string name="login_button">LOGIN</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_out_button">SIGN_OUT</string>
+    <string name="register">Register</string>
 </resources>
