@@ -15,17 +15,17 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
     //UI elements
-    private var etLogin: EditText? = null
-    private var etEmail: EditText? = null
-    private var etPassword: EditText? = null
-    private var btnCreateAccount: Button? = null
+    private lateinit var etLogin: EditText
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnCreateAccount: Button
 
     //Firebase reference
-    private var mAuth: FirebaseAuth? = null
+    private lateinit var mAuth: FirebaseAuth
 
-    private var login: String? = null
-    private var email: String? = null
-    private var password: String? = null
+    private lateinit var login: String
+    private lateinit var email: String
+    private lateinit var password: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +39,13 @@ class RegisterActivity : AppCompatActivity() {
         etPassword = findViewById<View>(R.id.password_register) as EditText
         btnCreateAccount = findViewById<View>(R.id.register_button) as Button
         mAuth = FirebaseAuth.getInstance()
-        btnCreateAccount?.setOnClickListener { createNewAccount() }
+        btnCreateAccount.setOnClickListener { createNewAccount() }
     }
 
     private fun createNewAccount() {
-        login = etLogin?.text.toString()
-        email = etEmail?.text.toString()
-        password = etPassword?.text.toString()
+        login = etLogin.text.toString()
+        email = etEmail.text.toString()
+        password = etPassword.text.toString()
 
         if (validateFillParameters()) {
             createUserWithEmailAndPassword()
@@ -59,17 +59,15 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun createUserWithEmailAndPassword() {
 
-        mAuth!!
-            .createUserWithEmailAndPassword(email!!, password!!)
+        mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) { // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     verifyEmail() //Verify Email
                     val user = User(
-                        mAuth?.currentUser?.uid.orEmpty(),
-                        login.orEmpty(),
-                        email.orEmpty(),
-                        password.orEmpty()
+                        mAuth.currentUser?.uid.orEmpty(),
+                        email,
+                        password
                     )
                     updateUserInfoAndUI(user) //update user profile information
                 } else { // If sign in fails, display a message to the user.
@@ -86,7 +84,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun verifyEmail() {
-        val mUser = mAuth?.currentUser;
+        val mUser = mAuth.currentUser;
         mUser?.sendEmailVerification()?.addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 Toast.makeText(

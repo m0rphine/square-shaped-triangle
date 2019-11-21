@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun signOut() {
-        startActivity(Intent(this, RegisterActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         FirebaseAuth.getInstance().signOut();
     }
 
@@ -35,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
         private val USER_OBJ = "USER_OBJ"
 
         fun createIntent(context: Context, user: User): Intent {
-            val intent = Intent(context, LoginActivity::class.java)
+            val intent = Intent(context, HomeActivity::class.java)
             intent.putExtra(USER_OBJ, user)
             return intent
         }
