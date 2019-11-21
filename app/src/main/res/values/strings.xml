@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">square-shaped-triangle</string>
-    <string name="sign_in">Sign in</string>
+    <string name="create_account">Create Account</string>
     <string name="login_button">LOGIN</string>
     <string name="login">Login</string>
     <string name="name">Name</string>

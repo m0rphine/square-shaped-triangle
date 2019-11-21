@@ -35,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
         private val USER_OBJ = "USER_OBJ"
 
         fun createIntent(context: Context, user: User): Intent {
-            val intent = Intent(context, HomeActivity::class.java)
+            val intent = Intent(context, LoginActivity::class.java)
             intent.putExtra(USER_OBJ, user)
             return intent
         }

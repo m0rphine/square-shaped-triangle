@@ -28,18 +28,18 @@
         android:textColor="#000000" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/button_login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/login_button" />
 
     <Button
-        android:id="@+id/btn_link_sign_in"
+        android:id="@+id/create_account_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:text="@string/sign_in" />
+        android:text="@string/create_account" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/google_button"
