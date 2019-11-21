@@ -1,13 +1,13 @@
 # square-shaped-triangle
 
  # Firebase Authentication / Registration 
-  1. Google
-  2. Facebook
-  3. Email
+  1. Google - in progress
+  2. Facebook - if we have time
+  3. Email - done
 
  # User Profile
  1. Icon
- 2. Nickname
+ 2. Nickname = email 
  3. List of games: 
     * which user have 
     * favourites
@@ -22,11 +22,14 @@
  7. Player list - will be displayed to users when viewing the event
  
  # Usage scenario
-https://docs.google.com/document/d/1KB5pbM08l70RSw1qx0PH6tyYgKiSLv7NMnflw-DK6FM/edit
+  https://docs.google.com/document/d/1KB5pbM08l70RSw1qx0PH6tyYgKiSLv7NMnflw-DK6FM/edit
 
-# If we have time
- 1. Statistics in user profile
- 2. Event search filters
+ # Tasks
+  https://docs.google.com/document/d/1CxgwK03DvsjlT_-wm-YQCUiRA3yB4HVtzGxNzH77mnc/edit
+
+ # If we have time
+   1. Statistics in user profile
+   2. Event search filters
  
  #API 
  Link: https://www.boardgameatlas.com/api/docs/search
