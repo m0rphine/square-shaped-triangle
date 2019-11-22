@@ -8,4 +8,7 @@
     <string name="password">Password</string>
     <string name="sign_out_button">SIGN_OUT</string>
     <string name="register">Register</string>
+    <string name="helloText">Welcome to Board Games Master!</string>
+    <string name="textForRegister">You are not a member?</string>
+    <string name="loginButtonText">Login</string>
 </resources>

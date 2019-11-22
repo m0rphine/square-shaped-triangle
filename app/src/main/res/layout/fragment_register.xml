@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/log_sign_screens_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonArrowBackRegisterScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back_icon"
+        android:background="@android:color/white"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello There!"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="37dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonArrowBackRegisterScreen"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextEmailRegisterScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingStart="24dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewHello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextPasswordRegisterScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="numberPassword|textPassword"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingStart="24dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmailRegisterScreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLoginRegisterScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingEnd="64dp"
+        android:paddingStart="64dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="37dp"
+        android:elevation="3dp"
+        android:background="@drawable/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPasswordRegisterScreen"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSignInRegisterScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingEnd="45dp"
+        android:paddingStart="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="37dp"
+        android:elevation="3dp"
+        android:background="@drawable/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonLoginRegisterScreen"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLoginWithGoogleRegisterScreen"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:background="@drawable/button"
+        android:text="Login with Google"
+        android:textSize="12sp"
+        android:textColor="@color/colorAccent"
+        android:drawableLeft="@drawable/google_icon"
+        android:paddingStart="20dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonLoginWithFacebookRegisterScreen"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLoginWithFacebookRegisterScreen"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:background="@drawable/button"
+        android:text="Login with Facebook"
+        android:textSize="12sp"
+        android:textColor="@color/colorAccent"
+        android:drawableLeft="@drawable/facebook_icon"
+        android:paddingStart="18dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
