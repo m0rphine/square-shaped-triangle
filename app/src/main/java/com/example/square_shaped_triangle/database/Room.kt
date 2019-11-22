@@ -3,12 +3,12 @@ package com.example.square_shaped_triangle.database
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import androidx.room.Dao
 
 @Dao
 interface AppDao {
 
     @Query("select * from user")
+    @Transaction
     fun getUsers(): LiveData<List<User>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
