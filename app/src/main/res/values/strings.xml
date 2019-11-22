@@ -43,4 +43,13 @@
     <string name="button_my_games">My Games</string>
     <string name="button_my_events">My Events</string>
     <string name="menu_games">Games</string>
+    <string name="event_name_example">Main event</string>
+    <string name="created_by_label">created by</string>
+    <string name="address_example">Minsk, street 55</string>
+    <string name="creater_name_example">John Doe</string>
+    <string name="date_example">01/01/2020</string>
+    <string name="boardGamesCount_example">8</string>
+    <string name="countOfPeople_example">7</string>
+    <string name="players_on_event_label">Players on event</string>
+    <string name="games_on_event_label">Games on event</string>
 </resources>
