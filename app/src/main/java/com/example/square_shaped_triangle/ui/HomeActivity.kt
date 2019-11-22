@@ -24,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
             signOut()
         }
     }
-
+//
     private fun signOut() {
         startActivity(Intent(this, LoginActivity::class.java))
         FirebaseAuth.getInstance().signOut();
