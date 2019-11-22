@@ -13,7 +13,7 @@
         android:id="@+id/login_input_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/login"
+        android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textColor="#000000" />

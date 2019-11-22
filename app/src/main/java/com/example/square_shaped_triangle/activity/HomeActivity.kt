@@ -34,10 +34,8 @@ class HomeActivity : AppCompatActivity() {
         private val TAG = "HomeActivity"
         private val USER_OBJ = "USER_OBJ"
 
-        fun createIntent(context: Context, user: User): Intent {
-            val intent = Intent(context, HomeActivity::class.java)
-            intent.putExtra(USER_OBJ, user)
-            return intent
+        fun createIntent(context: Context): Intent {
+            return Intent(context, HomeActivity::class.java)
         }
     }
 }
