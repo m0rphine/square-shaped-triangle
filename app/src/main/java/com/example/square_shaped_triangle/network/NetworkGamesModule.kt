@@ -58,8 +58,4 @@ object NetworkGamesModule {
         return gameApiService.getCategories()
     }
 
-    suspend fun getMechanic(id: String): MechanicsListResponse {
-        return gameApiService.getMechanics()
-    }
-
 }

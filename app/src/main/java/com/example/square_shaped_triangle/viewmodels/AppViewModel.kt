@@ -6,7 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.square_shaped_triangle.database.getDatabase
 import com.example.square_shaped_triangle.network.NetworkGamesModule
+import com.example.square_shaped_triangle.network.response.CategoriesListResponse
+import com.example.square_shaped_triangle.network.response.GameResponse
 import com.example.square_shaped_triangle.network.response.GamesListResponse
+import com.example.square_shaped_triangle.network.response.MechanicsListResponse
 import com.example.square_shaped_triangle.repository.Repository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,10 +28,49 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     val games: LiveData<GamesListResponse>
         get() = _games
 
+    private val _gameByName = MutableLiveData<GameResponse>()
+    val gameByName: LiveData<GameResponse>
+        get() = _gameByName
+
+    private val _gameById = MutableLiveData<GameResponse>()
+    val gameById: LiveData<GameResponse>
+        get() = _gameById
+
+    private val _mechanics = MutableLiveData<MechanicsListResponse>()
+    val mechanics: LiveData<MechanicsListResponse>
+        get() = _mechanics
+
+    private val _categories = MutableLiveData<CategoriesListResponse>()
+    val categories: LiveData<CategoriesListResponse>
+        get() = _categories
 
     fun getGames() {
         viewModelScope.launch {
             _games.value = NetworkGamesModule.getGames()
+        }
+    }
+
+    fun getGameByName(name: String) {
+        viewModelScope.launch {
+            _gameByName.value = NetworkGamesModule.getGameByName(name)
+        }
+    }
+
+    fun getGameById(id: String) {
+        viewModelScope.launch {
+            _gameById.value = NetworkGamesModule.getGameById(id)
+        }
+    }
+
+    fun getMechanics() {
+        viewModelScope.launch {
+            _mechanics.value = NetworkGamesModule.getMechanics()
+        }
+    }
+
+    fun getCategories() {
+        viewModelScope.launch {
+            _categories.value = NetworkGamesModule.getCategories()
         }
     }
 

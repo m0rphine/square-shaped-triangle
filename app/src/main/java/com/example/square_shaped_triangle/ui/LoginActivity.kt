@@ -56,6 +56,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         initialise()
         googleSignInController.configureGoogleSignIn()
+
+        /*var viewModel = AppViewModel(application)
+        viewModel.getGames()
+        viewModel.games.observe(this, Observer { games ->
+            Log.i(TAG + " games =  ", games.toString())
+        })*/
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -74,7 +80,12 @@ class LoginActivity : AppCompatActivity() {
         btnCreateAccount.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
-        btnLogin.setOnClickListener { emailSignInController.loginUser(etEmail.text.toString(), etPassword.text.toString()) }
+        btnLogin.setOnClickListener {
+            emailSignInController.loginUser(
+                etEmail.text.toString(),
+                etPassword.text.toString()
+            )
+        }
         google_button.setOnClickListener { googleSignInController.signIn() }
     }
 
