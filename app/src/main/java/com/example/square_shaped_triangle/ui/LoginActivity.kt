@@ -1,4 +1,4 @@
-package com.example.square_shaped_triangle.activity
+package com.example.square_shaped_triangle.ui
 
 import android.app.Activity
 import android.content.Context
@@ -13,7 +13,6 @@ import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EmailSignInController
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EventCallback
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.GoogleSignInController
-import com.example.square_shaped_triangle.ui.HomeActivity
 import com.google.android.gms.common.SignInButton
 
 

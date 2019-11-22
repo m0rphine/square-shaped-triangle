@@ -1,4 +1,4 @@
-package com.example.square_shaped_triangle.activity
+package com.example.square_shaped_triangle.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EmailSignInController
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EventCallback
-import com.example.square_shaped_triangle.ui.HomeActivity
 
 class RegisterActivity : AppCompatActivity() {
     //UI elements
