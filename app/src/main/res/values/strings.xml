@@ -55,4 +55,5 @@
     <string name="button_joinEvent_label">JOIN</string>
     <string name="button_leaveEvent_label">LEAVE</string>
     <string name="button_deleteEvent_label">DELETE</string>
+    <string name="time_example">11:00</string>
 </resources>

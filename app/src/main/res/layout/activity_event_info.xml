@@ -223,6 +223,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
+            android:id="@+id/activityEventInfo_TextView_eventDate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/date_example"
@@ -242,9 +243,10 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
+            android:id="@+id/activityEventInfo_TextView_eventTime"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/date_example"
+            android:text="@string/time_example"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
