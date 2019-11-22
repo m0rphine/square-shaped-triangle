@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/dp_3"
+    app:cardCornerRadius="@dimen/dp_8"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_game_image"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            app:cardCornerRadius="@dimen/dp_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/item_game_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@color/colorPrimary"
+                android:contentDescription="@string/game_small_poster" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/item_game_textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/item_game_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/item_game_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_game_textView_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/game_year_creation"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toEndOf="@id/item_game_image"
+            app:layout_constraintTop_toBottomOf="@id/item_game_textView_name" />
+
+        <TextView
+            android:id="@+id/item_game_textView_designer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_3"
+            android:text="@string/game_designer"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_year"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_year"
+            app:layout_constraintTop_toTopOf="@id/item_game_textView_year" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_game_textView_num_players_icon"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            app:layout_constraintStart_toEndOf="@id/item_game_image"
+            app:layout_constraintTop_toBottomOf="@id/item_game_textView_year"
+            app:srcCompat="@drawable/ic__material_people_light" />
+
+        <TextView
+            android:id="@+id/item_game_textView_num_players"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:text="@string/number_of_players"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_num_players_icon"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_num_players_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_game_textView_game_time_icon"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_num_players_icon"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_num_players"
+            app:layout_constraintTop_toTopOf="@id/item_game_textView_num_players_icon"
+            app:srcCompat="@drawable/ic__material_time_light" />
+
+        <TextView
+            android:id="@+id/item_game_textView_game_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:text="@string/num_of_minutes"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_num_players_icon"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_game_time_icon" />
+
+        <TextView
+            android:id="@+id/item_game_textView_game_minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_minutes"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_num_players_icon"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_game_time" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_game_textView_player_age_icon"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_num_players_icon"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_game_minutes"
+            app:layout_constraintTop_toTopOf="@id/item_game_textView_num_players_icon"
+            app:srcCompat="@drawable/ic__material_people_age" />
+
+        <TextView
+            android:id="@+id/item_game_textView_player_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:text="@string/min_people_age"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_num_players_icon"
+            app:layout_constraintStart_toEndOf="@id/item_game_textView_player_age_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -43,6 +43,16 @@
     <string name="button_my_games">My Games</string>
     <string name="button_my_events">My Events</string>
     <string name="menu_games">Games</string>
+    <string name="game_small_poster">game small poster</string>
+    <string name="item_game_name">Catan</string>
+    <string name="button_sign_in_with_google">Sign In With Google</string>
+    <string name="button_sign_in_with_facebook">Sign In With Facebook</string>
+    <string name="game_year_creation">1998,</string>
+    <string name="game_designer">Catan Universe</string>
+    <string name="number_of_players">3-12</string>
+    <string name="text_minutes">+ minutes</string>
+    <string name="num_of_minutes">15</string>
+    <string name="min_people_age">10+</string>
     <string name="event_name_example">Main event</string>
     <string name="created_by_label">created by</string>
     <string name="address_example">Minsk, street 55</string>

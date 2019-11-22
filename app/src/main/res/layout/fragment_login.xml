@@ -5,32 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/log_sign_screens_bg">
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/buttonArrowBackLoginScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/arrow_back_icon"
-        android:background="@android:color/white"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <TextView
-        android:id="@+id/textViewHello"
+        android:id="@+id/login_textView_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_string"
         android:textSize="@dimen/sp_40"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_84"
         android:layout_marginStart="@dimen/dp_32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonArrowBackLoginScreen"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editTextEmailLoginScreen"
+        android:id="@+id/login_editText_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_email"
@@ -43,12 +32,12 @@
         android:paddingTop="@dimen/dp_16"
         android:paddingStart="@dimen/dp_24"
         android:paddingEnd="@dimen/dp_24"
-        app:layout_constraintTop_toBottomOf="@id/textViewHello"
+        app:layout_constraintTop_toBottomOf="@id/login_textView_hello"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editTextPasswordLoginScreen"
+        android:id="@+id/login_editText_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_password"
@@ -61,13 +50,13 @@
         android:paddingTop="@dimen/dp_16"
         android:paddingStart="@dimen/dp_24"
         android:paddingEnd="@dimen/dp_24"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmailLoginScreen"
+        app:layout_constraintTop_toBottomOf="@id/login_editText_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonLoginOnLoginScreen"
+        android:id="@+id/login_button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_login"
@@ -83,10 +72,10 @@
         android:layout_marginEnd="@dimen/dp_32"
         android:background="@drawable/rounded_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPasswordLoginScreen"/>
+        app:layout_constraintTop_toBottomOf="@id/login_editText_password" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonSignInLoginScreen"
+        android:id="@+id/login_button_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_sign_in"
@@ -102,42 +91,25 @@
         android:layout_marginEnd="@dimen/dp_32"
         android:background="@drawable/rounded_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonLoginOnLoginScreen"/>
+        app:layout_constraintTop_toBottomOf="@id/login_button_login" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLoginWithGoogleLoginScreen"
+        android:id="@+id/login_button_login_with_google"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_33"
+        android:layout_height="@dimen/dp_45"
         android:background="@drawable/rounded_button"
         android:text="@string/button_login_with_google"
-        android:textSize="@dimen/sp_12"
+        android:layout_marginBottom="@dimen/dp_16"
         android:textColor="@color/colorPrimary"
         android:drawableStart="@drawable/google_icon"
         android:paddingTop="@dimen/dp_3"
         android:paddingBottom="@dimen/dp_3"
+        android:paddingStart="@dimen/dp_24"
+        android:paddingEnd="@dimen/dp_8"
         android:layout_marginStart="@dimen/dp_32"
         android:layout_marginEnd="@dimen/dp_32"
-        android:layout_marginBottom="@dimen/dp_8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonLoginWithFacebookLoginScreen"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLoginWithFacebookLoginScreen"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_33"
-        android:background="@drawable/rounded_button"
-        android:text="@string/button_login_with_facebook"
-        android:textSize="12sp"
-        android:textColor="@color/colorPrimary"
-        android:drawableLeft="@drawable/facebook_icon"
-        android:paddingStart="18dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="16dp"
+        android:textSize="@dimen/sp_14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

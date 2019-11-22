@@ -30,4 +30,7 @@
     <dimen name="dp_0">0dp</dimen>
     <dimen name="dp_56">56dp</dimen>
     <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_130">130dp</dimen>
+    <dimen name="dp_88">88dp</dimen>
 </resources>
