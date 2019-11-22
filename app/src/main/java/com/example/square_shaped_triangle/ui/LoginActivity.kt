@@ -1,4 +1,4 @@
-package com.example.square_shaped_triangle.activity
+package com.example.square_shaped_triangle.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -104,7 +104,9 @@ class LoginActivity : AppCompatActivity() { // need Refactor
 
     private fun signIn() {
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
+        startActivityForResult(signInIntent,
+            RC_SIGN_IN
+        )
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -150,7 +152,12 @@ class LoginActivity : AppCompatActivity() { // need Refactor
         !(TextUtils.isEmpty(email) || TextUtils.isEmpty(password))
 
     private fun updateUI(user: User) {
-        startActivity(HomeActivity.createIntent(this, user))
+        startActivity(
+            HomeActivity.createIntent(
+                this,
+                user
+            )
+        )
     }
 
     companion object {

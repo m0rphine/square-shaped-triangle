@@ -1,6 +1,5 @@
-package com.example.square_shaped_triangle.activity
+package com.example.square_shaped_triangle.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -80,7 +79,12 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun updateUserInfoAndUI(user: User) {
-        startActivity(HomeActivity.createIntent(this, user))
+        startActivity(
+            HomeActivity.createIntent(
+                this,
+                user
+            )
+        )
     }
 
     private fun verifyEmail() {
