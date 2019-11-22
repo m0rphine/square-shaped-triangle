@@ -18,6 +18,15 @@ import kotlinx.coroutines.launch
 
 class AppViewModel(application: Application) : AndroidViewModel(application) {
 
+    /*
+    //How we should Use LiveData in Activity
+    var viewModel = AppViewModel(application)
+        viewModel.getGames()
+        viewModel.games.observe(this, Observer { games ->
+            Log.i(TAG + " games =  ", games.toString())
+        })
+    */
+
     private val viewModelJob = SupervisorJob()
 
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
