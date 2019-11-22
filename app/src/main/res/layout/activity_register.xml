@@ -9,13 +9,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:scrollbars="vertical"
-    tools:context=".activity.RegisterActivity">
-
-    <EditText
-        android:id="@+id/login_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/name" />
+    tools:context=".ui.RegisterActivity">
 
     <EditText
         android:id="@+id/email_register"
