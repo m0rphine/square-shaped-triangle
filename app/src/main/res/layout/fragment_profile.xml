@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -44,7 +43,7 @@
 
     <com.google.android.material.button.MaterialButton
     android:id="@+id/profile_button_my_games"
-    android:layout_width="@dimen/dp_160"
+        android:layout_width="@dimen/dp_100"
     android:layout_height="wrap_content"
     android:background="@drawable/small_rounded_button"
     android:backgroundTint="@color/colorPrimary"
@@ -52,18 +51,16 @@
     android:textAllCaps="false"
     android:textColor="@android:color/white"
     android:textSize="@dimen/sp_14"
-    android:layout_marginStart="@dimen/dp_37"
+        android:layout_marginStart="@dimen/dp_32"
     android:layout_marginTop="@dimen/dp_16"
     android:paddingTop="@dimen/dp_8"
     android:paddingBottom="@dimen/dp_8"
-    android:paddingStart="@dimen/dp_37"
-    android:paddingEnd="@dimen/dp_37"
     app:layout_constraintTop_toBottomOf="@id/profile_constraint"
     app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFavorites"
-        android:layout_width="@dimen/dp_160"
+        android:layout_width="@dimen/dp_100"
         android:layout_height="wrap_content"
         android:background="@drawable/small_rounded_button"
         android:backgroundTint="@android:color/white"
@@ -71,12 +68,29 @@
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_14"
-        android:layout_marginEnd="@dimen/dp_37"
+        android:layout_marginEnd="@dimen/dp_8"
         android:layout_marginTop="@dimen/dp_16"
         android:paddingTop="@dimen/dp_8"
         android:paddingBottom="@dimen/dp_8"
-        android:paddingStart="@dimen/dp_37"
-        android:paddingEnd="@dimen/dp_37"
+        app:layout_constraintEnd_toEndOf="@id/button_my_events"
+        app:layout_constraintTop_toBottomOf="@id/profile_constraint"
+        app:layout_constraintStart_toEndOf="@id/profile_button_my_games" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_my_events"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:background="@drawable/small_rounded_button"
+        android:backgroundTint="@android:color/white"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_8"
+        android:text="@string/button_my_events"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_14"
         app:layout_constraintTop_toBottomOf="@id/profile_constraint"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -85,9 +99,9 @@
         android:id="@+id/profile_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
-        android:layout_marginStart="@dimen/dp_37"
+        android:layout_marginStart="@dimen/dp_32"
         android:layout_marginTop="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_37"
+        android:layout_marginEnd="@dimen/dp_32"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
