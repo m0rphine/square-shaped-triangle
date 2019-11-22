@@ -6,7 +6,7 @@ import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.database.Game
 import com.example.square_shaped_triangle.database.User
 
-class Repository (private  val database: AppDatabase) {
+class Repository(private val database: AppDatabase) {
 
     val users: LiveData<List<User>> = database.dao.getUsers()
 
