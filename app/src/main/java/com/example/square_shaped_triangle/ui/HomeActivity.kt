@@ -1,4 +1,4 @@
-package com.example.square_shaped_triangle.activity
+package com.example.square_shaped_triangle.ui
 
 import android.content.Context
 import android.content.Intent
@@ -24,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
             signOut()
         }
     }
-
+//
     private fun signOut() {
         startActivity(Intent(this, LoginActivity::class.java))
         FirebaseAuth.getInstance().signOut();

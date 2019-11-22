@@ -1,4 +1,4 @@
-package com.example.square_shaped_triangle.activity
+package com.example.square_shaped_triangle.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
