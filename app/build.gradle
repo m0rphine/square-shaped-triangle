@@ -51,11 +51,10 @@ dependencies {
     // lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
 
-    // firebase
-    implementation 'com.google.firebase:firebase-core:17.2.1'
-    implementation 'com.google.firebase:firebase-auth:19.1.0'
-    implementation 'com.google.android.material:material:1.0.0'
-
     //Google Play services Auth split
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    //Room dependency
+    def room_version = "2.2.2"
+    implementation "androidx.room:room-runtime:$room_version"
 }
