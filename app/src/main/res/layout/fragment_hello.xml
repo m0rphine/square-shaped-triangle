@@ -1,64 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/hello_screen_bg">
 
     <TextView
-        android:id="@+id/textViewHello"
+        android:id="@+id/hello_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="84dp"
-        android:lineSpacingExtra="8dp"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_84"
+        android:lineSpacingExtra="@dimen/dp_8"
         android:text="@string/helloText"
         android:textColor="@android:color/white"
-        android:textSize="32sp"
+        android:textSize="@dimen/sp_32"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLoginOnHelloScreen"
-        android:layout_width="126dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hello_button_login"
+        android:layout_width="@dimen/dp_126"
+        android:layout_height="@dimen/dp_46"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_40"
         android:background="@drawable/rounded_button"
         android:text="@string/loginButtonText"
         android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_20"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewHello" />
+        app:layout_constraintTop_toBottomOf="@id/hello_textView" />
 
     <TextView
-        android:id="@+id/gameInfoFragment_textView_yearPublisher"
+        android:id="@+id/hello_textView_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_8"
         android:text="@string/textForRegister"
         android:textColor="@color/grey"
-        android:textSize="18sp"
+        android:textSize="@dimen/sp_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewRegister"
+        android:id="@+id/hello_textView_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/register"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_20"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/gameInfoFragment_textView_yearPublisher" />
+        app:layout_constraintStart_toEndOf="@id/hello_textView_hint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

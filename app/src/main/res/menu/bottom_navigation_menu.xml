@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/profile"
-        android:icon="@drawable/ic_user"
-        android:title="@string/menu_profile"/>
-    <item android:id="@+id/events"
-        android:icon="@drawable/ic_events"
-        android:title="@string/menu_events" />
-    <item android:id="@+id/my_games"
-        android:icon="@drawable/ic_my_events"
-        android:title="@string/menu_my_events" />
+<item android:id="@+id/profile"
+    android:icon="@drawable/ic_user"
+    android:title="@string/menu_profile"/>
+<item android:id="@+id/events"
+    android:icon="@drawable/ic_events"
+    android:title="@string/menu_events" />
+<item android:id="@+id/my_events"
+    android:icon="@drawable/ic_games"
+    android:title="@string/menu_games" />
 </menu>
