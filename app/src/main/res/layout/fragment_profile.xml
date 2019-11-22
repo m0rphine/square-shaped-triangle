@@ -102,7 +102,7 @@
         android:layout_marginTop="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_32"
         android:clipToPadding="false"
-        android:paddingBottom="88dp"
+        android:paddingBottom="@dimen/dp_88"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
