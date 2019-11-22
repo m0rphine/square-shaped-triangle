@@ -52,4 +52,7 @@
     <string name="countOfPeople_example">7</string>
     <string name="players_on_event_label">Players on event</string>
     <string name="games_on_event_label">Games on event</string>
+    <string name="button_joinEvent_label">JOIN</string>
+    <string name="button_leaveEvent_label">LEAVE</string>
+    <string name="button_deleteEvent_label">DELETE</string>
 </resources>
