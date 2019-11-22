@@ -23,4 +23,20 @@
     <string name="button_login_with_google">Login with Google</string>
     <string name="button_login_with_facebook">Login with Facebook</string>
     <string name="game_image">Game image</string>
+    <string name="players_label">Players:</string>
+    <string name="time_label">Time:</string>
+    <string name="age_label">Age:</string>
+    <string name="categories_label">Categories</string>
+    <string name="mechanicks_label">Mechanicks</string>
+    <string name="dash">-</string>
+    <string name="age_example">12+</string>
+    <string name="time_max_example">1 hour</string>
+    <string name="time_min_example">20 min</string>
+    <string name="board_game_name_example">Catan</string>
+    <string name="description_label">Description</string>
+    <string name="boardgame_description_example">Text</string>
+    <string name="year_publisher_exampler">1998</string>
+    <string name="publisher_example">Catan Universe</string>
+    <string name="min_players_example">2</string>
+    <string name="max_players_example">8</string>
 </resources>
