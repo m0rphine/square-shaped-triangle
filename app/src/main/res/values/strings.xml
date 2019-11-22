@@ -11,4 +11,14 @@
     <string name="helloText">Welcome to Board Games Master!</string>
     <string name="textForRegister">You are not a member?</string>
     <string name="loginButtonText">Login</string>
+    <string name="menu_profile">profile</string>
+    <string name="menu_events">events</string>
+    <string name="menu_my_events">my events</string>
+    <string name="text_view_nickname">Nickname</string>
+    <string name="hello_string">Hello There!</string>
+    <string name="hint_email">email</string>
+    <string name="hint_password">password</string>
+    <string name="button_login">Login</string>
+    <string name="button_sign_in">Sign In</string>
+    <string name="button_login_with_google">Login with Google</string>
 </resources>

@@ -26,7 +26,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/button"
+        android:background="@drawable/rounded_button"
         android:text="@string/loginButtonText"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
