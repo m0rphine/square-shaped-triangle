@@ -7,9 +7,7 @@ import androidx.room.PrimaryKey
 data class Game constructor(
     @PrimaryKey
     val id: String,
-    val name: String,
-    val isFavorite: Boolean,
-    val isHas: Boolean
+    val name: String
 )
 
 @Entity
@@ -17,7 +15,8 @@ data class User constructor(
     @PrimaryKey
     val id: String,
     val name: String,
-    val games: List<Game>
+    val favoriteGames: List<Game>,
+    val ownedGames: List<Game>
 )
 
 @Entity
@@ -32,4 +31,4 @@ data class Event constructor(
     val state: String,
     val players: List<User>,
     val games: List<Game>
-    )
+)

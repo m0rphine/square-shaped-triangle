@@ -1,11 +1,10 @@
 package com.example.square_shaped_triangle.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.square_shaped_triangle.R
-import kotlinx.android.synthetic.main.activity_register.*
-import java.lang.IllegalArgumentException
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 

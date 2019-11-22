@@ -9,6 +9,6 @@ class GameDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        setContentView(R.layout.fragment_game_info)
+        setContentView(R.layout.activity_game_info)
     }
 }

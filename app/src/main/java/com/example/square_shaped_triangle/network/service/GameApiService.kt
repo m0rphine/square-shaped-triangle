@@ -22,7 +22,7 @@ interface GameApiService {
 
     @GET("search")
     fun getGameById(
-        @Query("id") id: String,
+        @Query("ids") id: String,
         @Query("client_id") client_id : String = CLIENT_ID
     ): Call<GamesListResponse>
 
