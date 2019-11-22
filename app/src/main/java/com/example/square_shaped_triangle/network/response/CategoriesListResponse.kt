@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-class GamesListResponse(
-    @Json(name = "games")
-    val games: List<GameResponse>?
+class CategoriesListResponse(
+    @Json(name = "categories")
+    val categories: List<CategoriesResponse>?
 )

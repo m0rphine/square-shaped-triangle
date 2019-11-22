@@ -1,7 +1,9 @@
 package com.example.square_shaped_triangle.network.service
 
+import com.example.square_shaped_triangle.network.response.CategoriesListResponse
+import com.example.square_shaped_triangle.network.response.GameResponse
 import com.example.square_shaped_triangle.network.response.GamesListResponse
-import retrofit2.Call
+import com.example.square_shaped_triangle.network.response.MechanicsListResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -10,31 +12,29 @@ private const val POPULARITY = "popularity"
 
 interface GameApiService {
     @GET("search")
-    fun getGames(
+    suspend fun getGames(
         @Query("client_id") client_id : String = CLIENT_ID
-    ): Call<GamesListResponse>
+    ): GamesListResponse
 
     @GET("search")
-    fun getPopularGames(
-        @Query("order_by") order_by : String = POPULARITY,
-        @Query("client_id") client_id : String = CLIENT_ID
-    ): Call<GamesListResponse>
-
-    @GET("search")
-    fun getGameById(
+    suspend fun getGameById(
         @Query("ids") id: String,
         @Query("client_id") client_id : String = CLIENT_ID
-    ): Call<GamesListResponse>
+    ): GameResponse
 
     @GET("search")
-    fun getGameByName(
+    suspend fun getGameByName(
         @Query("name") name: String,
         @Query("client_id") client_id : String = CLIENT_ID
-    ): Call<GamesListResponse>
+    ): GameResponse
 
     @GET("game/mechanics")
-    fun getMechanics(
+    suspend fun getMechanics(
         @Query("client_id") client_id : String = CLIENT_ID
-    ): Call<GamesListResponse>
+    ): MechanicsListResponse
 
+    @GET("game/categories")
+    suspend fun getCategories(
+        @Query("client_id") client_id : String = CLIENT_ID
+    ): CategoriesListResponse
 }
