@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/colorScreenBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -10,72 +10,71 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_24"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/white">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/profile_button_avatar"
             android:layout_width="@dimen/dp_64"
             android:layout_height="@dimen/dp_64"
+            android:layout_marginStart="@dimen/dp_24"
             android:layout_marginTop="@dimen/dp_18"
             android:layout_marginBottom="@dimen/dp_18"
-            android:layout_marginStart="@dimen/dp_24"
-            android:src="@drawable/ic_avatar"
             android:backgroundTint="@android:color/white"
+            android:src="@drawable/ic_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/profile_textView_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_view_nickname"
             android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/text_view_nickname"
             android:textSize="@dimen/sp_28"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/profile_button_avatar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
-    android:id="@+id/profile_button_my_games"
+        android:id="@+id/profile_button_my_games"
         android:layout_width="@dimen/dp_100"
-    android:layout_height="wrap_content"
-    android:background="@drawable/small_rounded_button"
-    android:backgroundTint="@color/colorPrimary"
-    android:text="@string/button_my_games"
-    android:textAllCaps="false"
-    android:textColor="@android:color/white"
-    android:textSize="@dimen/sp_14"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_32"
-    android:layout_marginTop="@dimen/dp_16"
-    android:paddingTop="@dimen/dp_8"
-    android:paddingBottom="@dimen/dp_8"
-    app:layout_constraintTop_toBottomOf="@id/profile_constraint"
-    app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/small_rounded_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_8"
+        android:text="@string/button_my_games"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFavorites"
         android:layout_width="@dimen/dp_100"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
         android:background="@drawable/small_rounded_button"
         android:backgroundTint="@android:color/white"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_8"
         android:text="@string/button_favorite"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_14"
-        android:layout_marginEnd="@dimen/dp_8"
-        android:layout_marginTop="@dimen/dp_16"
-        android:paddingTop="@dimen/dp_8"
-        android:paddingBottom="@dimen/dp_8"
-        app:layout_constraintEnd_toEndOf="@id/button_my_events"
-        app:layout_constraintTop_toBottomOf="@id/profile_constraint"
-        app:layout_constraintStart_toEndOf="@id/profile_button_my_games" />
-
+        app:layout_constraintEnd_toStartOf="@id/button_my_events"
+        app:layout_constraintStart_toEndOf="@id/profile_button_my_games"
+        app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_my_events"
@@ -91,8 +90,8 @@
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_14"
-        app:layout_constraintTop_toBottomOf="@id/profile_constraint"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
 
 
     <androidx.recyclerview.widget.RecyclerView
