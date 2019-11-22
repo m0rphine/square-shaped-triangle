@@ -2,7 +2,7 @@ package com.example.square_shaped_triangle.activity.helpers.singincontroller
 
 import android.app.Activity
 import android.util.Log
-import com.example.square_shaped_triangle.activity.helpers.ValidationHelper
+import com.example.square_shaped_triangle.activity.helpers.Validations
 import com.google.firebase.auth.FirebaseAuth
 
 class EmailSignInController(var eventCallback: EventCallback, val context: Activity) {
@@ -10,7 +10,7 @@ class EmailSignInController(var eventCallback: EventCallback, val context: Activ
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     fun loginUser(email: String, password: String) {
-        if (ValidationHelper.validateEmailAndPassword(email, password)) {
+        if (Validations.isEmptyEmailOrPassword(email, password)) {
             Log.d(TAG, "Logging in user.")
             mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(context) { task ->
@@ -30,7 +30,7 @@ class EmailSignInController(var eventCallback: EventCallback, val context: Activ
     }
 
     fun createNewAccount(email: String, password: String) {
-        if (ValidationHelper.validateEmailAndPassword(email, password)) {
+        if (Validations.isEmptyEmailOrPassword(email, password)) {
             createUserWithEmailAndPassword(email, password)
         } else {
             eventCallback.onError("Enter all details")
