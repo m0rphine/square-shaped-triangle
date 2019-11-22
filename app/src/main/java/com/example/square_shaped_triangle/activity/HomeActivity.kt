@@ -15,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val user = intent.getParcelableExtra<User>(USER_OBJ)
-        textView.text = user?.toString() //for testing, need to remove
+        gameInfoFragment_textView_yearPublisher.text = user?.toString() //for testing, need to remove
         setupUI()
     }
 

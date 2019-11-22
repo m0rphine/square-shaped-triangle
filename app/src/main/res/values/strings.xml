@@ -22,4 +22,5 @@
     <string name="button_sign_in">Sign In</string>
     <string name="button_login_with_google">Login with Google</string>
     <string name="button_login_with_facebook">Login with Facebook</string>
+    <string name="game_image">Game image</string>
 </resources>
