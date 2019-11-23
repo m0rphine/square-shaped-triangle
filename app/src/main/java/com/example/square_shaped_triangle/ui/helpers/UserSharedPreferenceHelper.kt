@@ -21,11 +21,19 @@ class UserSharedPreferenceHelper(context: Context) {
             }
         }
 
-    var password: String?
-        get() = sharedPreference.getString(USER_PASSWORD, null)
+    var name: String?
+        get() = sharedPreference.getString(USER_NAME, null)
         set(value) {
             sharedPreference.editMe {
-                it.putString(USER_PASSWORD, value)
+                it.putString(USER_NAME, value)
+            }
+        }
+
+    var uri: String?
+        get() = sharedPreference.getString(USER_URI, null)
+        set(value) {
+            sharedPreference.editMe {
+                it.putString(USER_URI, value)
             }
         }
 
@@ -33,7 +41,8 @@ class UserSharedPreferenceHelper(context: Context) {
 
     companion object{
         private const val USER_ID = "USER_ID"
-        private const val USER_PASSWORD = "USER_PASSWORD"
+        private const val USER_NAME = "USER_NAME"
+        private const val USER_URI = "USER_URI"
         private const val SHARED_PREF_NAME = "MY_SHARED_PREF"
 
         fun newInstance(context: Context) = UserSharedPreferenceHelper(context)

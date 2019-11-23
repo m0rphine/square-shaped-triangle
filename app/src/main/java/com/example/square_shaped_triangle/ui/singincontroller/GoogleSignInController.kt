@@ -42,7 +42,8 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
             val account = task.getResult(ApiException::class.java)
             account?.let {
                 newInstance(context).userId = it.id
-
+                newInstance(context).name = it.displayName
+                newInstance(context).uri = it.photoUrl.toString()
                 Log.i(TAG + "id", it.id.toString())
                 firebaseAuthWithGoogle(it) }
         } catch (e: ApiException) {

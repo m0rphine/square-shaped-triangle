@@ -26,6 +26,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:background="@color/grey"
+                android:scaleType="centerCrop"
                 android:contentDescription="@string/game_small_poster" />
         </com.google.android.material.card.MaterialCardView>
 

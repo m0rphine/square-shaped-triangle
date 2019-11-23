@@ -4,12 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.api.load
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.network.response.GameResponse
 import kotlinx.android.synthetic.main.item_game.view.*
 
-class GamesAdapter(private val clickListener: (position: Int) -> Unit
-): RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
+class GamesAdapter(
+    private val clickListener: (position: Int) -> Unit
+) : RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
 
     var list: List<GameResponse> = emptyList()
 
@@ -22,7 +24,10 @@ class GamesAdapter(private val clickListener: (position: Int) -> Unit
 
     override fun onBindViewHolder(holder: GamesViewHolder, position: Int) {
         val game = list.get(position)
-        holder.view.apply{
+        holder.view.apply {
+            item_game_imageView.load(game.imageUrl) {
+                crossfade(true)
+            }
             item_game_textView_name.text = game.name
             item_game_textView_year.text = game.yearPublished.toString()
             item_game_textView_num_players.text = "${game.minPlayers}-${game?.maxPlayers}"
