@@ -80,26 +80,6 @@
             app:layout_constraintTop_toTopOf="@+id/create_event_ic_games_colored"
             />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/create_event_ic_people"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_24"
-            android:src="@drawable/ic__material_people"
-            android:layout_marginStart="@dimen/dp_45"
-            app:layout_constraintStart_toEndOf="@+id/item_event_people_int"
-            app:layout_constraintTop_toTopOf="@+id/create_event_ic_games_colored" />
-
-        <TextView
-            android:id="@+id/item_event_people"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_3"
-            android:textColor="@color/colorPrimary"
-            android:text="@string/num_of_joined_players"
-            android:textSize="@dimen/sp_16"
-            app:layout_constraintStart_toEndOf="@+id/create_event_ic_people"
-            app:layout_constraintTop_toTopOf="@+id/create_event_ic_games_colored"
-            />
         <TextView
             android:id="@+id/item_event_date"
             android:layout_width="wrap_content"
@@ -113,40 +93,7 @@
             app:layout_constraintTop_toBottomOf="@+id/item_event_games"
             />
 
-        <TextView
-            android:id="@+id/item_event_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_8"
-            android:text="@string/event_time"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/sp_16"
-            app:layout_constraintBottom_toBottomOf="@id/item_event_date"
-            app:layout_constraintStart_toEndOf="@id/item_event_date" />
 
-        <TextView
-            android:id="@+id/item_event_created_by"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_8"
-            android:layout_marginBottom="@dimen/dp_16"
-            android:text="@string/created_by"
-            app:layout_constraintTop_toBottomOf="@+id/item_event_date"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        <TextView
-            android:id="@+id/item_event"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_16"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginTop="@dimen/dp_16"
-            android:text="@string/name_event_author"
-            app:layout_constraintStart_toEndOf="@+id/item_event_created_by"
-            app:layout_constraintBottom_toBottomOf="@id/item_event_created_by"
-            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

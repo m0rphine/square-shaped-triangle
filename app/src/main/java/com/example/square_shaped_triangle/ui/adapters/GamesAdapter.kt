@@ -11,11 +11,12 @@ import kotlinx.android.synthetic.main.item_game.view.*
 
 class GamesAdapter(
     private val clickListener: (position: Int) -> Unit
-) : RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
+): RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
 
     var list: List<GameResponse> = emptyList()
 
-    class GamesViewHolder(val view: View, private val clickListener: (position: Int) -> Unit) : RecyclerView.ViewHolder(view) {
+    class GamesViewHolder(val view: View, private val clickListener: (position: Int) -> Unit) :
+        RecyclerView.ViewHolder(view) {
         init {
             itemView.setOnClickListener {
                 val position = adapterPosition
@@ -37,13 +38,16 @@ class GamesAdapter(
             item_game_imageView.load(game.imageUrl) {
                 crossfade(true)
             }
-            item_game_textView_name.text = game.name
-            item_game_textView_year.text = game.yearPublished.toString()
-            item_game_textView_num_players.text = "${game.minPlayers}-${game?.maxPlayers}"
-            item_game_textView_game_time.text = "${game.maxPlayTime}"
-            item_game_textView_player_age.text = "${game.minAge}+"
-        }
+            val game = list[position]
+            holder.view.apply {
+                item_game_textView_name.text = game.name
+                item_game_textView_year.text = game.yearPublished.toString()
+                item_game_textView_num_players.text = "${game.minPlayers}-${game?.maxPlayers}"
+                item_game_textView_game_time.text = "${game.maxPlayTime}"
+                item_game_textView_player_age.text = "${game.minAge}+"
+            }
 
+        }
     }
 
     override fun getItemCount() = list.size
