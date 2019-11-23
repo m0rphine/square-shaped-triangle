@@ -41,10 +41,11 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
         try {
             val account = task.getResult(ApiException::class.java)
             account?.let {
+                Log.i(TAG, " account")
                 newInstance(context).userId = it.id
                 newInstance(context).name = it.displayName
                 newInstance(context).uri = it.photoUrl.toString()
-                Log.i(TAG + "id", it.id.toString())
+                Log.i(TAG + "id ", it.id.toString())
                 firebaseAuthWithGoogle(it) }
         } catch (e: ApiException) {
             eventCallback.onError("Google sign in failed. 1")
@@ -53,21 +54,6 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
-        //val personId = acct.id
-        //GoogleSignInAccount parameters !!!!!!!!!!!Need to add in DB !!!!!!!!!!!
-        /*val personName = acct.displayName
-        val personGivenName = acct.givenName
-        val personFamilyName = acct.familyName
-        val personEmail = acct.email
-        val personId = acct.id
-        val personPhoto: Uri? = acct.photoUrl
-        Log.d(LoginActivity.TAG, personName.orEmpty())
-        Log.d(LoginActivity.TAG, personGivenName.orEmpty())
-        Log.d(LoginActivity.TAG, personFamilyName.orEmpty())
-        Log.d(LoginActivity.TAG, personEmail.orEmpty())
-        Log.d(LoginActivity.TAG, personId.orEmpty())
-        Log.d(LoginActivity.TAG, personPhoto.toString())*/
-
         mAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 Log.i(TAG, "isSuccessful")

@@ -2,13 +2,16 @@ package com.example.square_shaped_triangle.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
+import coil.api.load
 import com.example.square_shaped_triangle.R
+import com.example.square_shaped_triangle.activity.helpers.UserSharedPreferenceHelper
 import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.database.Game
 import com.example.square_shaped_triangle.viewmodels.AppViewModel
@@ -42,13 +45,15 @@ class ProfileFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
         viewModel = ViewModelProviders.of(this.requireActivity()).get(AppViewModel::class.java)
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        context.let {
+        context?.let {
+            Log.i("name U", UserSharedPreferenceHelper.newInstance(it).name.orEmpty())
+            profile_textView_nickname.text = UserSharedPreferenceHelper.newInstance(it).name
+            profile_button_avatar.load(UserSharedPreferenceHelper.newInstance(it).uri)
             profile_button_my_games.setOnClickListener {
                 profile_recyclerView.adapter = GamesAdapter(myGames)
             }

@@ -11,7 +11,6 @@ import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EmailSignInController
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EventCallback
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.GoogleSignInController
-import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginActivity : AppCompatActivity() {
@@ -52,18 +51,12 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        googleSignInController.configureGoogleSignIn()
         initialise()
-
+        googleSignInController.configureGoogleSignIn()
     }
 
     override fun onStart() {
         super.onStart()
-        val user = FirebaseAuth.getInstance().currentUser
-        if (user != null) {
-            eventCallback.updateUI()
-            finish()
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -89,8 +82,7 @@ class LoginActivity : AppCompatActivity() {
             )
         }
         googleButton.setOnClickListener {
-            eventCallback.updateUI()
-//            googleSignInController.signIn()
+            googleSignInController.signIn()
         }
     }
 
