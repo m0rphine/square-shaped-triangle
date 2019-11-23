@@ -51,11 +51,6 @@ class CreateEventActivity : AppCompatActivity() {
 
     }
 
-/*  var s1 = create_event_edit_text_name_event.text
-    var s2 = create_event_edit_text_location.text
-    var s3 =create_event_text_view_time.text
-    var s4 = create_event_text_view_date.text*/
-
 /*    private fun openListGame() {
         val intent = Intent(this, ListGamesActivity::class.java)
         startActivity(intent)
@@ -63,15 +58,16 @@ class CreateEventActivity : AppCompatActivity() {
     private fun createvent(){
         viewModel.addEvent(event =
         Event(
-            id = "id",
-            name = "name",
-            address = "adres",
-            minPlayers = 2,
-            maxPlayers = 10,
-            date = "25",
+            id = UUID.randomUUID().toString(),
+            name = create_event_edit_text_name_event.text.toString(),
+            address = create_event_edit_text_location.text.toString(),
+            minPlayers = create_event_text_view_min.text.toString().toInt(),
+            maxPlayers = create_event_text_view_max.text.toString().toInt(),
+            date = create_event_text_view_date.text.toString(),
             creatorId = "autor",
             state = "dasd",
-            game = "")
+            game = "game")
         )
+
     }
 }
