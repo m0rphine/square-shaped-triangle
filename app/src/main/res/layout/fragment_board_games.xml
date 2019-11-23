@@ -7,6 +7,18 @@
     android:background="@color/colorScreenBackground"
     android:orientation="vertical">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="334dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
@@ -21,6 +33,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragmentBoardGames_recyclerView_listGames"
+        android:background="@color/colorScreenBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -32,5 +45,8 @@
         app:layout_constraintTop_toBottomOf="@+id/searchView"
         tools:listitem="@layout/item_game"
         />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
