@@ -17,7 +17,6 @@ class GenerateData {
 
 //    fun generateGames(): ArrayList<GameTest>{
 //        val games = ArrayList<GameTest>()
-//        games.add(GameTest("Catan", "Catan","1998", "Catan Universe", "3-12", 15, "10+"))
 //        games.add(GameTest("", "Pandemic", "2008", "Z-Man Games", "2-4", 45, "8+"))
 //        games.add(GameTest("", "Spirit Islands", "2016", "Greater Than Games", "1-4", 90, "13+"))
 //        games.add(GameTest("","Gloomhaven", "2017", "Cephalofair Games", "1-4", 60, "12+"))
@@ -29,17 +28,106 @@ class GenerateData {
 //        games.add(GameTest())
 //        return games
 //    }
-//
-//    fun generateEvents(): ArrayList<EventTest>{
-//        val events = ArrayList<EventTest>()
-//        events.add(EventTest())
-//        events.add(EventTest())
-//        events.add(EventTest())
-//        events.add(EventTest())
-//        events.add(EventTest())
-//        events.add(EventTest())
-//        events.add(EventTest())
-//        events.add(EventTest())
-//    }
+
+    fun generateEvents(): ArrayList<EventTest> {
+        val events = ArrayList<EventTest>()
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        events.add(
+            EventTest(
+                "New Booom Event!",
+                "Minsk, Filimonova, 175a",
+                4,
+                "4-12",
+                7,
+                "20/12/2019",
+                "12:00",
+                "Gloria Mirano"
+            )
+        )
+        return events
+    }
 
 }
