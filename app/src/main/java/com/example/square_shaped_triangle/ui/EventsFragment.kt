@@ -39,7 +39,7 @@ class EventsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //generateEvents()
         events_recyclerView.adapter = RecyclerViewEventsAdapter(events) { position ->
-            val event = events.get(position)
+            val event = events[position]
             //TODO:
         }
         events_recyclerView.layoutManager =

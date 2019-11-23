@@ -1,6 +1,7 @@
 package com.example.square_shaped_triangle.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -40,7 +41,10 @@ class GamesFragment: Fragment() {
 
         viewModel = ViewModelProviders.of(this.requireActivity()).get(AppViewModel::class.java)
         viewModel.getGames()
-        adapter = GamesAdapter{}
+        adapter = GamesAdapter{
+            val intent = Intent(this.context, GameDetailsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

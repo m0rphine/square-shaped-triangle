@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.square_shaped_triangle.database.*
+import com.example.square_shaped_triangle.database.getDatabase
 import com.example.square_shaped_triangle.network.NetworkGamesModule
 import com.example.square_shaped_triangle.network.response.CategoriesListResponse
 import com.example.square_shaped_triangle.network.response.GameResponse
@@ -37,10 +37,6 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     val games: LiveData<GamesListResponse>
         get() = _games
 
-    private val _user = MutableLiveData<User>()
-    val user: LiveData<User>
-        get() = _user
-
     private val _gameByName = MutableLiveData<GameResponse>()
     val gameByName: LiveData<GameResponse>
         get() = _gameByName
@@ -56,24 +52,6 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     private val _categories = MutableLiveData<CategoriesListResponse>()
     val categories: LiveData<CategoriesListResponse>
         get() = _categories
-
-    val users: LiveData<List<User>>
-        get() = appRepository.users
-
-    val events: LiveData<List<Event>>
-        get() = appRepository.events
-
-    private var _favoriteGames = MutableLiveData<FavoriteGames>()
-    val favoriteGames: LiveData<FavoriteGames>
-        get() = _favoriteGames
-
-    private var _players = MutableLiveData<Players>()
-    val players: LiveData<Players>
-        get() = _players
-
-    private var _ownedGames = MutableLiveData<OwnedGames>()
-    val ownedGames: LiveData<OwnedGames>
-        get() = _ownedGames
 
     fun getGames() {
         viewModelScope.launch {
