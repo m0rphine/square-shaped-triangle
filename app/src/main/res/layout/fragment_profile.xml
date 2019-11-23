@@ -43,29 +43,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/profile_button_my_games"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_32"
-        android:layout_marginTop="@dimen/dp_16"
-        app:cornerRadius="@dimen/dp_8"
-        android:backgroundTint="@color/colorPrimary"
-        android:paddingTop="@dimen/dp_8"
-        android:paddingBottom="@dimen/dp_8"
-        android:text="@string/button_my_games"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
-
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFavorites"
         android:layout_width="@dimen/dp_100"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_16"
         app:cornerRadius="@dimen/dp_8"
+        android:clickable="false"
         android:backgroundTint="@android:color/white"
         android:paddingTop="@dimen/dp_8"
         android:paddingBottom="@dimen/dp_8"
@@ -73,41 +56,23 @@
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_14"
-        app:layout_constraintEnd_toStartOf="@id/button_my_events"
-        app:layout_constraintStart_toEndOf="@id/profile_button_my_games"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_my_events"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_32"
-        app:cornerRadius="@dimen/dp_8"
-        android:backgroundTint="@android:color/white"
-        android:paddingTop="@dimen/dp_8"
-        android:paddingBottom="@dimen/dp_8"
-        android:text="@string/button_my_events"
-        android:textAllCaps="false"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp_14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/profile_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
         android:layout_marginStart="@dimen/dp_32"
-        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="@dimen/dp_32"
         android:clipToPadding="false"
         android:paddingBottom="@dimen/dp_88"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_button_my_games" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonFavorites" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_floating_action_button"

@@ -53,15 +53,6 @@ class ProfileFragment: Fragment() {
             Log.i("name U", UserSharedPreferenceHelper.newInstance(it).name.orEmpty())
             profile_textView_nickname.text = UserSharedPreferenceHelper.newInstance(it).name
             //profile_button_avatar.load(UserSharedPreferenceHelper.newInstance(it).uri)
-            profile_button_my_games.setOnClickListener {
-                profile_recyclerView.adapter = GamesAdapter(myGames)
-            }
-            buttonFavorites.setOnClickListener {
-                profile_recyclerView.adapter = GamesAdapter(favoriteGames)
-            }
-            button_my_events.setOnClickListener {
-                profile_recyclerView.adapter = EventsAdapter(events)
-            }
             profile_floating_action_button.setOnClickListener {
                 TODO()
             }
