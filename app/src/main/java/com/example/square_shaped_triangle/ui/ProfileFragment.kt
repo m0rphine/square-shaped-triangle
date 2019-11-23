@@ -14,11 +14,12 @@ import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.database.Game
 import com.example.square_shaped_triangle.viewmodels.AppViewModel
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.item_event.view.*
 import kotlinx.android.synthetic.main.item_game.view.*
 
 class ProfileFragment: Fragment() {
 
-    private val viewModel = ViewModelProviders.of(this).get(AppViewModel::class.java)
+    private lateinit var viewModel: AppViewModel
 
     private lateinit var myGames: List<Game>
     private lateinit var favoriteGames: List<Game>
@@ -26,6 +27,7 @@ class ProfileFragment: Fragment() {
 
     companion object{
         fun newInstance() = ProfileFragment()
+        val PROFILE_ID = "profile_id"
     }
 
     override fun onCreateView(
@@ -42,6 +44,11 @@ class ProfileFragment: Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
+        viewModel = ViewModelProviders.of(this.requireActivity()).get(AppViewModel::class.java)
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         context.let {
             profile_button_my_games.setOnClickListener {
                 profile_recyclerView.adapter = GamesAdapter(myGames)
@@ -59,9 +66,6 @@ class ProfileFragment: Fragment() {
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    }
-
     class GamesAdapter(private val dataset: List<Game>): RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
         class GamesViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
@@ -75,7 +79,6 @@ class ProfileFragment: Fragment() {
             holder.view.apply{
                 item_game_textView_name.text = game.name
                 item_game_textView_year.text = game.yearPublished.toString()
-                item_game_textView_designer.text = game.description
                 item_game_textView_num_players.text = "${game.minPlayers}-${game.maxPlayers}"
                 item_game_textView_game_time.text = "$game.maxPlayTime"
                 item_game_textView_player_age.text = "${game.minAge}+"
@@ -94,7 +97,14 @@ class ProfileFragment: Fragment() {
         }
 
         override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            holder.view.apply {
+                item_event_name
+                item_event_city
+                item_event_games
+                item_event_people_int
+                item_event_people
+                item_event_date
+            }
         }
 
         override fun getItemCount() = dataset.size

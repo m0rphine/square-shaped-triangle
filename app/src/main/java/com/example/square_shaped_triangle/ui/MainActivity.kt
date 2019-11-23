@@ -4,11 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.example.square_shaped_triangle.R
+import com.example.square_shaped_triangle.ui.EventsFragment.Companion.EVENTS_ID
+import com.example.square_shaped_triangle.ui.GamesFragment.Companion.GAMES_ID
+import com.example.square_shaped_triangle.ui.ProfileFragment.Companion.PROFILE_ID
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private var TAG = PROFILE_ID
 
     companion object {
         const val PROFILE = 0
@@ -27,20 +31,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frameContainer,ProfileFragment.newInstance())
-            .commit()
+        val fragmentById = supportFragmentManager.findFragmentByTag(TAG)
+        if(fragmentById == null){
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frameContainer,ProfileFragment.newInstance(), TAG)
+                .commit()
+        }
 
-        bottomNavigation.setOnNavigationItemReselectedListener {
-            val fragment: Fragment = when (it.itemId) {
-                 PROFILE -> ProfileFragment.newInstance()
-                 EVENTS -> EventsFragment.newInstance()
-                 GAMES -> GamesFragment.newInstance()
+
+        bottomNavigation.setOnNavigationItemSelectedListener {
+            TAG = when (it.itemId) {
+                 R.id.profile -> PROFILE_ID
+                 R.id.events -> EVENTS_ID
+                 R.id.games ->  GAMES_ID
+                 else -> throw IllegalArgumentException()
+            }
+            createFragment(TAG)
+            true
+        }
+    }
+
+    fun createFragment(tag: String) {
+        val fragmentById = supportFragmentManager.findFragmentByTag(TAG)
+        fragmentById.let {
+            val fragment = when(tag) {
+                PROFILE_ID -> ProfileFragment.newInstance()
+                EVENTS_ID -> EventsFragment.newInstance()
+                GAMES_ID -> GamesFragment.newInstance()
                 else -> throw IllegalArgumentException()
             }
             supportFragmentManager.beginTransaction()
-                .replace(R.id.frameContainer, fragment)
-                .commit()
-        }
+                .replace(R.id.frameContainer, fragment, TAG)
+                .commit() }
     }
 }

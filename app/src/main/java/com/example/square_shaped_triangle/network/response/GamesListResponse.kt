@@ -6,5 +6,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class GamesListResponse(
     @Json(name = "games")
-    val games: List<GameResponse>?
+    val games: List<GameResponse>
 )
