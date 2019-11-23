@@ -1,7 +1,9 @@
 package com.example.square_shaped_triangle.ui
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -48,6 +50,19 @@ class CreateEventActivity : AppCompatActivity() {
             },year,month,day)
             calendar.show()
         }
+        create_event_text_view_Games.setOnClickListener {
+            startActivityForResult(Intent(this, GamePickerActivity::class.java), REQUEST_CODE_GAME)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE_GAME) {
+            if (resultCode == Activity.RESULT_OK) {
+                create_event_text_view_Games.text = data?.getStringExtra(GamePickerActivity.KEY_PICKED_GAME_NAME)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
     }
 
     private fun createvent(){
@@ -61,11 +76,15 @@ class CreateEventActivity : AppCompatActivity() {
             date = create_event_text_view_date.text.toString(),
             creatorId = "autor",
             state = "dasd",
-            game = "game")
+            game = create_event_text_view_Games.text.toString()) // TODO: update game text
         )
         {
             Toast.makeText(this,"Event created",Toast.LENGTH_SHORT).show()
             finish()
         }
+    }
+
+    companion object {
+        private const val REQUEST_CODE_GAME = 2303
     }
 }

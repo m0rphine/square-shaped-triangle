@@ -32,6 +32,7 @@ class EventsAdapter(
         holder.itemView.apply {
             item_event_name.text = event.name
             item_event_city.text = event.address
+            item_event_game_name.text = event.game
             item_event_people_int.text = "${event.minPlayers}-${event.maxPlayers}"
             item_event_date.text = event.date
         }
