@@ -50,7 +50,7 @@
     <string name="game_year_creation">1998,</string>
     <string name="game_designer">Catan Universe</string>
     <string name="number_of_players">3-12</string>
-    <string name="text_minutes">+ minutes</string>
+    <string name="text_minutes">+ min</string>
     <string name="num_of_minutes">15</string>
     <string name="min_people_age">10+</string>
     <string name="event_name_example">Main event</string>

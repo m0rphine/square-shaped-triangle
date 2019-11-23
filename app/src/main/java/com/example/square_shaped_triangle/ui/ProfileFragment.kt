@@ -106,7 +106,6 @@ class ProfileFragment: Fragment() {
                 item_event_city
                 item_event_games
                 item_event_people_int
-                item_event_people
                 item_event_date
             }
         }
