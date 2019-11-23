@@ -35,5 +35,7 @@ class UserSharedPreferenceHelper(context: Context) {
         private const val USER_ID = "USER_ID"
         private const val USER_PASSWORD = "USER_PASSWORD"
         private const val SHARED_PREF_NAME = "MY_SHARED_PREF"
+
+        fun newInstance(context: Context) = UserSharedPreferenceHelper(context)
     }
 }
