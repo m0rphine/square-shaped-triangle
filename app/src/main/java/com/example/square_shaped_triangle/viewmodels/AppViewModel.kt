@@ -74,6 +74,10 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+//    fun getEventById(id: String):LiveData<Event> {
+//        return appRepository.getEventById(id)
+//    }
+
     fun getMechanics() {
         viewModelScope.launch {
             _mechanics.postValue(NetworkGamesModule.getMechanics())

@@ -31,6 +31,8 @@ class Repository(private val database: AppDatabase) {
 
     fun addEvent(event: Event) = database.dao.insertEvent(event)
 
-
+//    fun getEventById(id: String):LiveData<Event> {
+//        return database.dao.getEventById(id)
+//    }
 
 }

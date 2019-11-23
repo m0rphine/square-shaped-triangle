@@ -41,7 +41,12 @@ class EventsFragment: Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         viewModel = ViewModelProviders.of(this.requireActivity()).get(AppViewModel::class.java)
-        adapter = EventsAdapter{}
+        adapter = EventsAdapter{//position ->
+//            val event = adapter.getItem(position)
+//            val intent = Intent(this.context, EventDetailsActivity::class.java)
+//            intent.putExtra("EVENT_ID", event.id)
+//            startActivity(intent)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

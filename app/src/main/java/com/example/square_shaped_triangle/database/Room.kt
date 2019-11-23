@@ -16,6 +16,9 @@ interface AppDao {
     @Query("select * from event")
     fun getEvent(): LiveData<List<Event>>
 
+//    @Query("select * from event where id = :id")
+//    fun getEventById(id: String): LiveData<Event>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertEvent(event: Event)
 

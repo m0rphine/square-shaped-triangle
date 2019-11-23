@@ -5,12 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
     <TextView
         android:id="@+id/gameInfoFragment_textView_min_playtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/time_min_example"
+        tools:text="@string/time_min_example"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_label_playtime"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_label_playtime" />
@@ -20,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/age_example"
+        tools:text="@string/age_example"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_Label_age"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_Label_age" />
@@ -30,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/time_max_example"
+        tools:text="@string/time_max_example"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_playtime"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_playtime" />
@@ -45,70 +59,47 @@
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_textView_min_playtime"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_textView_min_playtime" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/game_image"
-        app:layout_constraintDimensionRatio="w,16:7"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="h,16:7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[14]" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic[14]"
+        tools:visibility="invisible" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_addToMyListGames"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/ic_add_icon" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_addToFavorites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton_addToMyListGames"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.232"
-        app:srcCompat="@drawable/ic_icon_material_favorite_border" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton_addToFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="@color/colorPrimary"
+                app:borderWidth="0dp"
+                app:elevation="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintVertical_bias="0.232"
+                app:srcCompat="@drawable/ic_icon_material_favorite_border" />
 
     <TextView
         android:id="@+id/gameInfoFragment_textView_GameName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginTop="16dp"
-        android:text="@string/board_game_name_example"
+        tools:text="@string/board_game_name_example"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/gameInfoFragment_label_mechanicks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/mechanicks_label"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_textViewl_description" />
 
-    <TextView
-        android:id="@+id/gameInfoFragment_label_categories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/categories_label"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_textViewl_description" />
+
 
     <TextView
         android:id="@+id/gameInfoFragment_label_description"
@@ -125,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/boardgame_description_example"
+        tools:text="@string/boardgame_description_example"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_label_description" />
@@ -135,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/year_publisher_exampler"
+        tools:text="@string/year_publisher_exampler"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_textView_GameName" />
@@ -145,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/publisher_example"
+        tools:text="@string/publisher_example"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_textView_yearPublisher"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_textView_yearPublisher" />
@@ -165,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/min_players_example"
+        tools:text="@string/min_players_example"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_label_players"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_label_players" />
@@ -175,7 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/max_players_example"
+        tools:text="@string/max_players_example"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/gameInfoFragment_players"
         app:layout_constraintTop_toTopOf="@+id/gameInfoFragment_label_players" />
@@ -210,25 +201,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_label_playtime" />
 
-    <ListView
-        android:id="@+id/gameInfoFragment_listView_mechanics"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_label_categories">
-    </ListView>
-
-    <ListView
-        android:id="@+id/gameInfoFragment_listView_categories"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/gameInfoFragment_label_mechanicks" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -245,5 +217,6 @@
         app:layout_constraintGuide_percent="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,9 +2,11 @@ package com.example.square_shaped_triangle.ui
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.text.Html
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import coil.api.load
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.database.Game
 import com.example.square_shaped_triangle.network.response.GameResponse
@@ -33,7 +35,7 @@ class GameDetailsActivity : AppCompatActivity() {
     }
 
     fun setView(it: GameResponse){
-        //imageView2.load(it.imageUrl)
+        imageView2.load(it.imageUrl)
         gameInfoFragment_textView_GameName.text = it.name
         gameInfoFragment_textView_yearPublisher.text = it.yearPublished.toString()
         gameInfoFragment_textView_publisher.text = it.publisher
@@ -41,7 +43,7 @@ class GameDetailsActivity : AppCompatActivity() {
         gameInfoFragment_textView_max_players.text = it.maxPlayers.toString()
         //gameInfoFragment_textView_min_playtime.text = it.maxPlayTime
         gameInfoFragment_textView_age.text = it.minAge.toString() + "+"
-        gameInfoFragment_textViewl_description.text = it.description
+        gameInfoFragment_textViewl_description.text = Html.fromHtml(it.description)
 
     }
 }
