@@ -1,7 +1,9 @@
 package com.example.square_shaped_triangle.repository
 
 import androidx.lifecycle.LiveData
-import com.example.square_shaped_triangle.database.*
+import com.example.square_shaped_triangle.database.AppDatabase
+import com.example.square_shaped_triangle.database.Event
+import com.example.square_shaped_triangle.database.User
 
 class Repository(private val database: AppDatabase) {
 
@@ -9,7 +11,7 @@ class Repository(private val database: AppDatabase) {
 
     val events: LiveData<List<Event>> = database.dao.getEvent()
 
-    fun favoriteGames(userId: String): LiveData<FavoriteGames> =
+    /*fun favoriteGames(userId: String): LiveData<FavoriteGames> =
         database.dao.getFavoriteGames(userId)
 
     fun setFavoriteGame(favoriteGames: FavoriteGames) =
@@ -23,10 +25,13 @@ class Repository(private val database: AppDatabase) {
     fun getPlayers(eventId: String): LiveData<Players> =
         database.dao.getPlayers(eventId)
 
+    fun getEventGames(eventId: String): LiveData<EventGames> =
+        database.dao.getEventGames(eventId)
+
     fun setPlayer(players: Players) = database.dao.insertPlayers(players)
 
     fun setEvent(event: Event) = database.dao.insertEvent(event)
 
-    fun setUser(user: User) = database.dao.insertUser(user)
+    fun setUser(user: User) = database.dao.insertUser(user)*/
 
 }

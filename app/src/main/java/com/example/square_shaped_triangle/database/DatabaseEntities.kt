@@ -55,7 +55,7 @@ data class Event constructor(
 class Players {
     @Embedded
     @JvmField
-    var user: User? = null
+    var event: Event? = null
 
     @Relation(parentColumn = "id", entityColumn = "id", entity = User::class)
     @JvmField
@@ -65,7 +65,7 @@ class Players {
 class EventGames {
     @Embedded
     @JvmField
-    var user: User? = null
+    var event: Event? = null
 
     @Relation(parentColumn = "id", entityColumn = "id", entity = Game::class)
     @JvmField

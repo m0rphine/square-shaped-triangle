@@ -11,15 +11,16 @@ interface AppDao {
     @Transaction
     fun getUsers(): LiveData<List<User>>
 
-    @Query("select * from user u where u.id = :id")
+   /* @Query("select * from user u where u.id = :id")
     @Transaction
-    fun getFavoriteGames(id: String): LiveData<FavoriteGames>
+    fun getFavoriteGames(id: String): LiveData<List<Game>>
 
     @Query("select * from user u where u.id = :id")
     @Transaction
-    fun getOwnedGames(id: String): LiveData<OwnedGames>
+    fun getOwnedGames(id: String): LiveData<List<Game>>*/
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Transaction
     fun insertUser(user: User)
 
     @Query("select * from game")
@@ -28,26 +29,33 @@ interface AppDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertGame(game: Game)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertFavoriteGame(favoriteGames: FavoriteGames)
+    @Query("select * from event")
+    fun getEvent(): LiveData<List<Event>>
+
+    /*@Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Transaction
+    fun insertOwnedGame(list: List<Game>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertOwnedGame(ownedGames: OwnedGames)
+    fun insertFavoriteGame(list: List<Game>)
 
     @Query("select * from event")
     fun getEvent(): LiveData<List<Event>>
 
     @Query("select * from event ev where ev.id = :eventId")
-    fun getPlayers(eventId: String): LiveData<Players>
+    @Transaction
+    fun getPlayers(eventId: String): LiveData<List<User>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Transaction
     fun insertPlayers(players: Players)
 
-    @Query("select * from event")
-    fun getEventGames(): LiveData<List<EventGames>>
+    @Query("select * from event  ev where ev.id = :eventId")
+    @Transaction
+    fun getEventGames(eventId: String): LiveData<List<Game>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertEvent(event: Event)
+    fun insertEvent(event: Event)*/
 
 }
 

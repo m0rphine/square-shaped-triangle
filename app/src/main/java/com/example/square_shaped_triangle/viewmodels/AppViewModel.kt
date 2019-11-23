@@ -101,7 +101,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun getFavoriteGames(userId: String) {
+    /*fun getFavoriteGames(userId: String) {
         viewModelScope.launch {
             _favoriteGames = appRepository.favoriteGames(userId) as MutableLiveData
         }
@@ -118,5 +118,5 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             _players = appRepository.getPlayers(eventId) as MutableLiveData
         }
     }
-
+*/
 }
