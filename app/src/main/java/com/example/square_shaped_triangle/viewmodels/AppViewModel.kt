@@ -66,25 +66,25 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getGameByName(name: String) {
         viewModelScope.launch {
-            _gameByName.value = NetworkGamesModule.getGameByName(name)
+            _gameByName.postValue(NetworkGamesModule.getGameByName(name))
         }
     }
 
     fun getGameById(id: String) {
         viewModelScope.launch {
-            _gameById.value = NetworkGamesModule.getGameById(id)
+            _gameById.postValue(NetworkGamesModule.getGameById(id))
         }
     }
 
     fun getMechanics() {
         viewModelScope.launch {
-            _mechanics.value = NetworkGamesModule.getMechanics()
+            _mechanics.postValue(NetworkGamesModule.getMechanics())
         }
     }
 
     fun getCategories() {
         viewModelScope.launch {
-            _categories.value = NetworkGamesModule.getCategories()
+            _categories.postValue(NetworkGamesModule.getCategories())
         }
     }
     fun addEvent(event: Event) {
