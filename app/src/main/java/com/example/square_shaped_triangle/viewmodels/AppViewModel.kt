@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.database.getDatabase
 import com.example.square_shaped_triangle.network.NetworkGamesModule
 import com.example.square_shaped_triangle.network.response.CategoriesListResponse
@@ -82,7 +83,11 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             _categories.value = NetworkGamesModule.getCategories()
         }
     }
-
+    fun addEvent(event: Event) {
+        viewModelScope.launch {
+            appRepository.addEvent(event)
+        }
+    }
     /*fun getFavoriteGames(userId: String) {
         viewModelScope.launch {
             _favoriteGames = appRepository.favoriteGames(userId) as MutableLiveData

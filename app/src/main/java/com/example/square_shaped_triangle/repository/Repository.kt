@@ -26,10 +26,11 @@ class Repository(private val database: AppDatabase) {
     fun getEventGames(eventId: String): LiveData<EventGames> =
         database.dao.getEventGames(eventId)
 
-    fun setPlayer(players: Players) = database.dao.insertPlayers(players)
+    fun setUser(user: User) = database.dao.insertUser(user)
+    fun setPlayer(players: Players) = database.dao.insertPlayers(players)*/
 
-    fun setEvent(event: Event) = database.dao.insertEvent(event)
+    fun addEvent(event: Event) = database.dao.insertEvent(event)
 
-    fun setUser(user: User) = database.dao.insertUser(user)*/
+
 
 }

@@ -177,14 +177,16 @@
         app:layout_constraintStart_toEndOf="@+id/create_event_text_view_min"
         app:layout_constraintTop_toTopOf="@+id/create_event_text_view_min" />
 
-    <TextView
+    <EditText
         android:id="@+id/create_event_text_view_people_min"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="20dp"
-        android:text="people"
+        android:inputType="number"
+        android:background="@android:color/white"
+        android:text="2"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/create_event_ic_people_min"
@@ -226,13 +228,15 @@
         app:layout_constraintStart_toEndOf="@+id/create_event_text_view_max"
         app:layout_constraintTop_toTopOf="@+id/create_event_text_view_max" />
 
-    <TextView
+    <EditText
         android:id="@+id/create_event_text_view_people_max"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
-        android:text="people"
+        android:inputType="number"
+        android:background="@android:color/white"
+        android:text="10"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/create_event_ic_people_max"
@@ -294,6 +298,23 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/activityEventInfo_button_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/button_applyEvent_label"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
