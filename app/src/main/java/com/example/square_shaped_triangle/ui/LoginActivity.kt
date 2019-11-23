@@ -1,6 +1,5 @@
 package com.example.square_shaped_triangle.ui
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -14,6 +13,7 @@ import com.example.square_shaped_triangle.activity.helpers.singincontroller.Emai
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EventCallback
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.GoogleSignInController
 import com.google.android.gms.common.SignInButton
+import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginActivity : AppCompatActivity() {
@@ -54,13 +54,23 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        initialise()
         googleSignInController.configureGoogleSignIn()
+        initialise()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            eventCallback.updateUI()
+            finish()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN && resultCode == Activity.RESULT_OK) {
+        if (requestCode == RC_SIGN_IN) {
             googleSignInController.handleGoogleSignIn(data)
         }
     }

@@ -2,6 +2,7 @@ package com.example.square_shaped_triangle.activity.helpers.singincontroller
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import com.example.square_shaped_triangle.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -34,12 +35,15 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
     }
 
     fun handleGoogleSignIn(data: Intent?) {
+        Log.i(TAG, " handleGoogleSignIn")
         val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
         try {
             val account = task.getResult(ApiException::class.java)
-            account?.let { firebaseAuthWithGoogle(it) }
+            account?.let {
+                Log.i(TAG, it.id.toString())
+                firebaseAuthWithGoogle(it) }
         } catch (e: ApiException) {
-            eventCallback.onError("Google sign in failed.")
+            eventCallback.onError("Google sign in failed. 1")
         }
     }
 
@@ -62,9 +66,10 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
 
         mAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
+                Log.i(TAG, "isSuccessful")
                 eventCallback.updateUI()
             } else {
-                eventCallback.onError("Google sign in failed.")
+                eventCallback.onError("Google sign in failed. 2")
             }
         }
     }

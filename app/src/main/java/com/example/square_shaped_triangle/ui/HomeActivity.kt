@@ -17,7 +17,9 @@ class HomeActivity : AppCompatActivity() {
         private val TAG = "HomeActivity"
 
         fun createIntent(context: Context): Intent {
-            return Intent(context, HomeActivity::class.java)
+            return Intent(context, HomeActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            }
         }
     }
 }
