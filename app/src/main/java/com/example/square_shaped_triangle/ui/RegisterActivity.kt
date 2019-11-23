@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         override fun updateUI() {
-            startActivity(HomeActivity.createIntent(this@RegisterActivity))
+            startActivity(MainActivity.createIntent(this@RegisterActivity))
         }
     }
 

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.example.square_shaped_triangle.R
+import com.example.square_shaped_triangle.activity.helpers.UserSharedPreferenceHelper.Companion.newInstance
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -40,7 +41,9 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
         try {
             val account = task.getResult(ApiException::class.java)
             account?.let {
-                Log.i(TAG, it.id.toString())
+                newInstance(context).userId = it.id
+
+                Log.i(TAG + "id", it.id.toString())
                 firebaseAuthWithGoogle(it) }
         } catch (e: ApiException) {
             eventCallback.onError("Google sign in failed. 1")
@@ -75,6 +78,6 @@ class GoogleSignInController(var eventCallback: EventCallback, val context: Cont
     }
 
     companion object {
-        private val TAG = "GoogleSignInController"
+        private val TAG = "GoogleSignIn"
     }
 }

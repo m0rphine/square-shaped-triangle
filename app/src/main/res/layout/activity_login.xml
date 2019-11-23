@@ -1,50 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:scrollbars="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/log_sign_screens_bg">
 
-    <EditText
+    <TextView
+        android:id="@+id/login_textView_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_string"
+        android:textSize="@dimen/sp_40"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="@dimen/dp_84"
+        android:layout_marginStart="@dimen/dp_32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/login_input_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/email"
-        android:importantForAutofill="no"
+        android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
-        android:textColor="#000000" />
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:paddingBottom="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingStart="@dimen/dp_24"
+        android:paddingEnd="@dimen/dp_24"
+        app:layout_constraintTop_toBottomOf="@id/login_textView_hello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/login_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:textColor="#000000" />
+        android:hint="@string/hint_password"
+        android:inputType="numberPassword|textPassword"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:paddingBottom="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingStart="@dimen/dp_24"
+        android:paddingEnd="@dimen/dp_24"
+        app:layout_constraintTop_toBottomOf="@id/login_input_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_login"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/login_button" />
+        android:text="@string/button_login"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_16"
+        android:textAlignment="center"
+        android:paddingTop="@dimen/dp_11"
+        android:paddingBottom="@dimen/dp_11"
+        android:paddingEnd="@dimen/dp_64"
+        android:paddingStart="@dimen/dp_64"
+        android:layout_marginTop="@dimen/dp_100"
+        android:layout_marginEnd="@dimen/dp_32"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/dp_100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_input_password" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/create_account_button"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="@string/create_account" />
+        android:text="@string/button_sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_16"
+        android:textAlignment="center"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingEnd="@dimen/dp_45"
+        android:paddingStart="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_32"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/dp_100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_login" />
 
-    <com.google.android.gms.common.SignInButton
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/google_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@drawable/rounded_button"
+        android:text="@string/button_login_with_google"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:textColor="@color/colorPrimary"
+        android:drawableStart="@drawable/google_icon"
+        android:paddingTop="@dimen/dp_3"
+        android:paddingBottom="@dimen/dp_3"
+        android:paddingStart="@dimen/dp_24"
+        android:paddingEnd="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.square_shaped_triangle.ui
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,7 +11,6 @@ import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EmailSignInController
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.EventCallback
 import com.example.square_shaped_triangle.activity.helpers.singincontroller.GoogleSignInController
-import com.google.android.gms.common.SignInButton
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -22,9 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnCreateAccount: Button
-    private lateinit var googleButton: SignInButton
-
-    private lateinit var context: Context
+    private lateinit var googleButton: Button
 
     private val eventCallback = object :
         EventCallback {
@@ -37,8 +33,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         override fun updateUI() {
-            val intent = Intent(context, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(MainActivity.createIntent(this@LoginActivity))
         }
     }
 
@@ -80,13 +75,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initialise() {
-        context = this
-
         etEmail = findViewById<View>(R.id.login_input_email) as EditText
         etPassword = findViewById<View>(R.id.login_input_password) as EditText
         btnLogin = findViewById<View>(R.id.button_login) as Button
         btnCreateAccount = findViewById<View>(R.id.create_account_button) as Button
-        googleButton = findViewById<View>(R.id.google_button) as SignInButton
+        googleButton = findViewById<View>(R.id.google_button) as Button
         btnCreateAccount.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
