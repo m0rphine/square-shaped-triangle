@@ -3,9 +3,11 @@ package com.example.square_shaped_triangle.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,13 +17,13 @@ import com.example.square_shaped_triangle.ui.adapters.GamesAdapter
 import com.example.square_shaped_triangle.viewmodels.AppViewModel
 import kotlinx.android.synthetic.main.fragment_board_games.*
 
-class GamesFragment: Fragment() {
+class GamesFragment : Fragment() {
 
     private lateinit var viewModel: AppViewModel
 
     private lateinit var adapter: GamesAdapter
 
-    companion object{
+    companion object {
         fun newInstance() = GamesFragment()
         val GAMES_ID = "GAMES_ID"
     }
@@ -41,7 +43,7 @@ class GamesFragment: Fragment() {
 
         viewModel = ViewModelProviders.of(this.requireActivity()).get(AppViewModel::class.java)
         viewModel.getGames()
-        adapter = GamesAdapter{
+        adapter = GamesAdapter {
             val intent = Intent(this.context, GameDetailsActivity::class.java)
             startActivity(intent)
         }
@@ -55,9 +57,27 @@ class GamesFragment: Fragment() {
             adapter.notifyDataSetChanged()
         })
         context.let {
-            searchView.setOnSearchClickListener {
-                TODO()
-            }
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    query?.let { viewModel.getGameByName(it) }
+                    viewModel.gameByName.observe(this@GamesFragment, Observer {
+                        adapter.list = it.games
+                        adapter.notifyDataSetChanged()
+                    })
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    if(TextUtils.isEmpty(newText)) {
+                        viewModel.games.observe(this@GamesFragment, Observer {
+                            adapter.list = it.games
+                            adapter.notifyDataSetChanged()
+                        })
+                    }
+                    return true
+                }
+
+            })
         }
     }
 }

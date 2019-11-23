@@ -46,8 +46,8 @@ object NetworkGamesModule {
         return gameApiService.getGameById(id)
     }
 
-    suspend fun getGameByName(name: String): GameResponse {
-        return gameApiService.getGameByName(name)
+    suspend fun getGameByName(name: String): GamesListResponse {
+        return gameApiService.getGamesByName(name)
     }
 
     suspend fun getMechanics(): MechanicsListResponse {

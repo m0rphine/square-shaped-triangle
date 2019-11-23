@@ -23,10 +23,10 @@ interface GameApiService {
     ): GameResponse
 
     @GET("search")
-    suspend fun getGameByName(
+    suspend fun getGamesByName(
         @Query("name") name: String,
         @Query("client_id") client_id : String = CLIENT_ID
-    ): GameResponse
+    ): GamesListResponse
 
     @GET("game/mechanics")
     suspend fun getMechanics(
