@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.example.square_shaped_triangle.R
@@ -34,10 +33,10 @@ class ProfileFragment: Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        viewModel.ownedGames.observe(this, Observer { myGames = it.games})
-        viewModel.favoriteGames.observe(this, Observer { favoriteGames = it.games })
-        viewModel.events.observe(this, Observer { events = it })
+   ): View? {
+//        viewModel.ownedGames.observe(this, Observer { myGames = it.games})
+//        viewModel.favoriteGames.observe(this, Observer { favoriteGames = it.games })
+//        viewModel.events.observe(this, Observer { events = it })
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 

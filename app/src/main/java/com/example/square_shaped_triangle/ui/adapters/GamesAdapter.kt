@@ -15,11 +15,20 @@ class GamesAdapter(
 
     var list: List<GameResponse> = emptyList()
 
-    class GamesViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    class GamesViewHolder(val view: View, private val clickListener: (position: Int) -> Unit) : RecyclerView.ViewHolder(view) {
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    clickListener(position)
+                }
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GamesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_game, parent, false)
-        return GamesViewHolder(view)
+        return GamesViewHolder(view, clickListener)
     }
 
     override fun onBindViewHolder(holder: GamesViewHolder, position: Int) {
