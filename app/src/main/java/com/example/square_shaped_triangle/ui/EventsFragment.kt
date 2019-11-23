@@ -1,6 +1,7 @@
 package com.example.square_shaped_triangle.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.ui.adapters.RecyclerViewEventsAdapter
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_events.*
 
 class EventsFragment: Fragment() {
@@ -31,6 +33,7 @@ class EventsFragment: Fragment() {
         return view
     }
 
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -44,9 +47,9 @@ class EventsFragment: Fragment() {
         }
         events_recyclerView.layoutManager =
             LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
-        context.let {
+        context?.let {
             events_floating_action_button.setOnClickListener {
-                TODO()
+                startActivity(Intent(context,CreateEventActivity::class.java))
             }
         }
     }
