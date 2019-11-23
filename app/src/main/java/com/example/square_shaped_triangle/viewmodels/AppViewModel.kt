@@ -2,6 +2,8 @@ package com.example.square_shaped_triangle.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.square_shaped_triangle.database.getDatabase
 import com.example.square_shaped_triangle.network.NetworkGamesModule
 import com.example.square_shaped_triangle.network.response.CategoriesListResponse
