@@ -9,7 +9,16 @@ import androidx.room.Relation
 data class Game constructor(
     @PrimaryKey
     val id: String,
-    val name: String
+    val name: String?,
+    val yearPublished: Int?,
+    val minPlayers: Int?,
+    val maxPlayers: Int?,
+    val maxPlayTime: Int?,
+    val minAge: Int?,
+    val description: String?,
+    val imageUrl: String?,
+    val publisher: String?,
+    val averageRating: Double?
 )
 
 @Entity
