@@ -20,7 +20,7 @@ interface GameApiService {
     suspend fun getGameById(
         @Query("ids") id: String,
         @Query("client_id") client_id : String = CLIENT_ID
-    ): GameResponse
+    ): GamesListResponse
 
     @GET("search")
     suspend fun getGamesByName(

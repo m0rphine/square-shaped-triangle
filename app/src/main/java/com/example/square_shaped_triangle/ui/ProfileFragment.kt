@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.activity.helpers.UserSharedPreferenceHelper
 import com.example.square_shaped_triangle.database.Event
@@ -53,7 +52,7 @@ class ProfileFragment: Fragment() {
         context?.let {
             Log.i("name U", UserSharedPreferenceHelper.newInstance(it).name.orEmpty())
             profile_textView_nickname.text = UserSharedPreferenceHelper.newInstance(it).name
-            profile_button_avatar.load(UserSharedPreferenceHelper.newInstance(it).uri)
+            //profile_button_avatar.load(UserSharedPreferenceHelper.newInstance(it).uri)
             profile_button_my_games.setOnClickListener {
                 profile_recyclerView.adapter = GamesAdapter(myGames)
             }

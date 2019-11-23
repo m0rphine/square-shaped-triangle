@@ -82,7 +82,7 @@ class LoginActivity : AppCompatActivity() {
             )
         }
         googleButton.setOnClickListener {
-            /*googleSignInController.signIn()*/
+            //googleSignInController.signIn()
             eventCallback.updateUI()
         }
     }

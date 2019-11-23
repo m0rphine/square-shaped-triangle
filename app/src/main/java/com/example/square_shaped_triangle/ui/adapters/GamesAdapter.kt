@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.example.square_shaped_triangle.R
+import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.network.response.GameResponse
 import kotlinx.android.synthetic.main.item_game.view.*
 
@@ -51,4 +52,6 @@ class GamesAdapter(
     }
 
     override fun getItemCount() = list.size
+
+    fun getItem(position: Int): GameResponse = list[position]
 }
