@@ -47,13 +47,8 @@ class CreateEventActivity : AppCompatActivity() {
             },year,month,day)
             calendar.show()
         }
-
     }
 
-/*    private fun openListGame() {
-        val intent = Intent(this, ListGamesActivity::class.java)
-        startActivity(intent)
-    }*/
     private fun createvent(){
         viewModel.addEvent(event =
         Event(
@@ -67,6 +62,5 @@ class CreateEventActivity : AppCompatActivity() {
             state = "dasd",
             game = "game")
         )
-
     }
 }
