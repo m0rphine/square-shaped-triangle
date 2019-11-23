@@ -2,11 +2,8 @@ package com.example.square_shaped_triangle.ui
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.database.Event
@@ -26,6 +23,7 @@ class CreateEventActivity : AppCompatActivity() {
 /*        profile_floating_action_button.setOnClickListener{
             openListGame()
         }*/
+
         create_event_text_view_time.setOnClickListener{
             createvent()
         }
