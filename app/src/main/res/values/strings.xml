@@ -66,4 +66,12 @@
     <string name="button_leaveEvent_label">LEAVE</string>
     <string name="button_deleteEvent_label">DELETE</string>
     <string name="time_example">11:00</string>
+    <string name="event_name">Name</string>
+    <string name="event_adress">City</string>
+    <string name="num_of_games">8</string>
+    <string name="num_of_joined_players">7</string>
+    <string name="event_date">01/01/2000</string>
+    <string name="event_time">12.00</string>
+    <string name="created_by">created by</string>
+    <string name="name_event_author">John Doe</string>
 </resources>

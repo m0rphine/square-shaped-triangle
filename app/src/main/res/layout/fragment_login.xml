@@ -70,7 +70,8 @@
         android:paddingStart="@dimen/dp_64"
         android:layout_marginTop="@dimen/dp_100"
         android:layout_marginEnd="@dimen/dp_32"
-        android:background="@drawable/rounded_button"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/dp_100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_editText_password" />
 
@@ -89,7 +90,8 @@
         android:paddingStart="@dimen/dp_45"
         android:layout_marginTop="@dimen/dp_8"
         android:layout_marginEnd="@dimen/dp_32"
-        android:background="@drawable/rounded_button"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/dp_100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_button_login" />
 
