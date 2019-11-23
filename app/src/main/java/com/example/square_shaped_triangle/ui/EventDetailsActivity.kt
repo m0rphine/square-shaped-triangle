@@ -25,7 +25,7 @@ class EventDetailsActivity : AppCompatActivity() {
         activityEventInfo_recyclerView_listPlayers.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        generateGames()
+        //generateGames()
 
         activityEventInfo_recyclerView_listGames.adapter = RecyclerViewGamesAdapter(games)
         activityEventInfo_recyclerView_listGames.layoutManager =
@@ -44,14 +44,7 @@ class EventDetailsActivity : AppCompatActivity() {
 
     }
 
-    fun generateGames() {
-        games.add(Game("dshcdhjgfjsa", "Catan"))
-        games.add(Game("dshcdhjgfjsa", "Catan"))
-        games.add(Game("dshcdhjgfjsa", "Catan"))
-        games.add(Game("dshcdhjgfjsa", "Catan"))
-        games.add(Game("dshcdhjgfjsa", "Catan"))
-        games.add(Game("dshcdhjgfjsa", "Catan"))
-        games.add(Game("dshcdhjgfjsa", "Catan"))
+    /*fun generateGames() {
 
-    }
+    }*/
 }
