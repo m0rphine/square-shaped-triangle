@@ -22,7 +22,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnCreateAccount: Button
-    private lateinit var google_button: SignInButton
+    private lateinit var googleButton: SignInButton
+
+    private lateinit var context: Context
 
     private val eventCallback = object :
         EventCallback {
@@ -35,7 +37,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         override fun updateUI() {
-            startActivity(HomeActivity.createIntent(this@LoginActivity))
+            val intent = Intent(context, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -62,15 +65,18 @@ class LoginActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_SIGN_IN && resultCode == Activity.RESULT_OK) {
             googleSignInController.handleGoogleSignIn(data)
+            eventCallback.updateUI()
         }
     }
 
     private fun initialise() {
+        context = this
+
         etEmail = findViewById<View>(R.id.login_input_email) as EditText
         etPassword = findViewById<View>(R.id.login_input_password) as EditText
         btnLogin = findViewById<View>(R.id.button_login) as Button
         btnCreateAccount = findViewById<View>(R.id.create_account_button) as Button
-        google_button = findViewById<View>(R.id.google_button) as SignInButton
+        googleButton = findViewById<View>(R.id.google_button) as SignInButton
         btnCreateAccount.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
@@ -80,15 +86,14 @@ class LoginActivity : AppCompatActivity() {
                 etPassword.text.toString()
             )
         }
-        google_button.setOnClickListener { googleSignInController.signIn() }
+        googleButton.setOnClickListener {
+            googleSignInController.signIn()
+        }
     }
 
     companion object {
         private val TAG = "LoginActivity"
         private val RC_SIGN_IN: Int = 1
 
-        fun createIntent(context: Context): Intent {
-            return Intent(context, LoginActivity::class.java)
-        }
     }
 }

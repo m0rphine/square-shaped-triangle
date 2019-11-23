@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frameContainer,ProfileFragment.newInstance())
+            .commit()
+
         bottomNavigation.setOnNavigationItemReselectedListener {
             val fragment: Fragment = when (it.itemId) {
                  PROFILE -> ProfileFragment.newInstance()
@@ -26,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 else -> throw IllegalArgumentException()
             }
             supportFragmentManager.beginTransaction()
-                .add(R.id.frameContainer, fragment)
+                .replace(R.id.frameContainer, fragment)
                 .commit()
         }
     }
