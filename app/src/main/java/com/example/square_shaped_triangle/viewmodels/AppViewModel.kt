@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.square_shaped_triangle.database.getDatabase
+import com.example.square_shaped_triangle.database.*
 import com.example.square_shaped_triangle.network.NetworkGamesModule
 import com.example.square_shaped_triangle.network.response.CategoriesListResponse
 import com.example.square_shaped_triangle.network.response.GameResponse
@@ -53,6 +53,24 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     val categories: LiveData<CategoriesListResponse>
         get() = _categories
 
+    val users: LiveData<List<User>>
+        get() = appRepository.users
+
+    val events: LiveData<List<Event>>
+        get() = appRepository.events
+
+    private var _favoriteGames = MutableLiveData<FavoriteGames>()
+    val favoriteGames: LiveData<FavoriteGames>
+        get() = _favoriteGames
+
+    private var _players = MutableLiveData<Players>()
+    val players: LiveData<Players>
+        get() = _players
+
+    private var _ownedGames = MutableLiveData<OwnedGames>()
+    val ownedGames: LiveData<OwnedGames>
+        get() = _ownedGames
+
     fun getGames() {
         viewModelScope.launch {
             _games.value = NetworkGamesModule.getGames()
@@ -80,6 +98,24 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     fun getCategories() {
         viewModelScope.launch {
             _categories.value = NetworkGamesModule.getCategories()
+        }
+    }
+
+    fun getFavoriteGames(userId: String) {
+        viewModelScope.launch {
+            _favoriteGames = appRepository.favoriteGames(userId) as MutableLiveData
+        }
+    }
+
+    fun getOwnedGames(userId: String) {
+        viewModelScope.launch {
+            _ownedGames = appRepository.ownedGames(userId) as MutableLiveData
+        }
+    }
+
+    fun getPlayers(eventId: String) {
+        viewModelScope.launch {
+            _players = appRepository.getPlayers(eventId) as MutableLiveData
         }
     }
 
