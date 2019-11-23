@@ -43,10 +43,14 @@ class GamesFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this.requireActivity()).get(AppViewModel::class.java)
         viewModel.getGames()
-        adapter = GamesAdapter {
+        adapter = GamesAdapter {position ->
+
+            val gameResponse = adapter.getItem(position)
             val intent = Intent(this.context, GameDetailsActivity::class.java)
+            intent.putExtra("GAME_ID", gameResponse.id)
             startActivity(intent)
         }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

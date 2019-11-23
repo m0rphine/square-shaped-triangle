@@ -46,8 +46,8 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     val gameByName: LiveData<GamesListResponse>
         get() = _gameByName
 
-    private val _gameById = MutableLiveData<GameResponse>()
-    val gameById: LiveData<GameResponse>
+    private val _gameById = MutableLiveData<GamesListResponse>()
+    val gameById: LiveData<GamesListResponse>
         get() = _gameById
 
     private val _mechanics = MutableLiveData<MechanicsListResponse>()

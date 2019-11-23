@@ -42,7 +42,7 @@ object NetworkGamesModule {
         return gameApiService.getGames()
     }
 
-    suspend fun getGameById(id: String): GameResponse {
+    suspend fun getGameById(id: String): GamesListResponse {
         return gameApiService.getGameById(id)
     }
 
