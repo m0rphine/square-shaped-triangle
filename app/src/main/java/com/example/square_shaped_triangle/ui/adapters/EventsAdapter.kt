@@ -39,7 +39,7 @@ class EventsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_event, parent, false)
-        return EventViewHolder(parent, clickListener)
+        return EventViewHolder(view, clickListener)
     }
 
     override fun getItemCount() = list.size
