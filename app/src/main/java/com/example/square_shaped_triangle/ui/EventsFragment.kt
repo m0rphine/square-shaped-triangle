@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.square_shaped_triangle.R
 import com.example.square_shaped_triangle.database.Event
+import com.example.square_shaped_triangle.ui.adapters.RecyclerViewEventsAdapter
 import kotlinx.android.synthetic.main.fragment_events.*
 
 class EventsFragment: Fragment() {
+
+    val events = ArrayList<Event>()
 
     companion object{
         fun newInstance() = EventsFragment()
@@ -23,7 +26,21 @@ class EventsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_events, container, false)
+
+
+        val view = inflater.inflate(R.layout.fragment_events, container, false)
+
+        //generateEvents()
+
+        events_recyclerView.adapter = RecyclerViewEventsAdapter(events) { position ->
+            val event = events.get(position)
+            //TODO:
+        }
+        events_recyclerView.layoutManager =
+            LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+
+
+        return view
     }
 
     override fun onAttach(context: Context) {
@@ -38,20 +55,5 @@ class EventsFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         TODO()
-    }
-
-    class GamesAdapter(private val dataset: Array<Event>): RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
-        class GamesViewHolder(val view: View) : RecyclerView.ViewHolder(view)
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GamesViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_event, parent, false)
-            return GamesViewHolder(view)
-        }
-
-        override fun onBindViewHolder(holder: GamesViewHolder, position: Int) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-        override fun getItemCount() = dataset.size
     }
 }

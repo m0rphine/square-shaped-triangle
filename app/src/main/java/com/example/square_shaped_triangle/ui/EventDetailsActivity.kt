@@ -19,7 +19,7 @@ class EventDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_info)
 
-        generateUsers()
+        //generateUsers()
 
         activityEventInfo_recyclerView_listPlayers.adapter = RecyclerViewPlayersAdapter(players)
         activityEventInfo_recyclerView_listPlayers.layoutManager =
@@ -27,24 +27,15 @@ class EventDetailsActivity : AppCompatActivity() {
 
         //generateGames()
 
-        activityEventInfo_recyclerView_listGames.adapter = RecyclerViewGamesAdapter(games)
+        activityEventInfo_recyclerView_listGames.adapter =
+            RecyclerViewGamesAdapter(games) { position ->
+                val game = games.get(position)
+                //TODO:
+            }
         activityEventInfo_recyclerView_listGames.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
     }
 
-    fun generateUsers() {
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
-        players.add(User("dsfhsjdhf", "JohnDoe", "11111111"))
 
-    }
-
-    /*fun generateGames() {
-
-    }*/
 }
