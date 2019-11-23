@@ -75,5 +75,5 @@
     <string name="event_time">12.00</string>
     <string name="created_by">created by</string>
     <string name="name_event_author">John Doe</string>
-    <string name="button_applyEvent_label">Apply</string>
+    <string name="button_applyEvent_label">Create</string>
 </resources>

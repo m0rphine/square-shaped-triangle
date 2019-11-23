@@ -12,10 +12,8 @@ import com.example.square_shaped_triangle.network.response.GameResponse
 import com.example.square_shaped_triangle.network.response.GamesListResponse
 import com.example.square_shaped_triangle.network.response.MechanicsListResponse
 import com.example.square_shaped_triangle.repository.Repository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.callbackFlow
 
 class AppViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -87,9 +85,11 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             _categories.postValue(NetworkGamesModule.getCategories())
         }
     }
-    fun addEvent(event: Event) {
+
+    fun addEvent(event: Event, callback: () -> Unit) {
         viewModelScope.launch {
             appRepository.addEvent(event)
+            withContext(Dispatchers.Main) { callback() }
         }
     }
 

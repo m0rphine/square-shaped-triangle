@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.square_shaped_triangle.R
+import com.example.square_shaped_triangle.database.Event
 import com.example.square_shaped_triangle.ui.adapters.EventsAdapter
 import com.example.square_shaped_triangle.viewmodels.AppViewModel
 import kotlinx.android.synthetic.main.fragment_events.*

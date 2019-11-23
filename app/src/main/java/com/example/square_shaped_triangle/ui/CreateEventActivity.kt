@@ -3,6 +3,7 @@ package com.example.square_shaped_triangle.ui
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.square_shaped_triangle.R
@@ -62,5 +63,9 @@ class CreateEventActivity : AppCompatActivity() {
             state = "dasd",
             game = "game")
         )
+        {
+            Toast.makeText(this,"Event created",Toast.LENGTH_SHORT).show()
+            finish()
+        }
     }
 }
