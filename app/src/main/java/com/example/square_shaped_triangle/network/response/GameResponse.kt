@@ -1,6 +1,5 @@
 package com.example.square_shaped_triangle.network.response
 
-import android.net.Uri
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -10,38 +9,38 @@ class GameResponse(
     val id: String,
 
     @Json(name = "name")
-    val name: String,
+    val name: String?,
 
     @Json(name = "year_published")
-    val yearPublished: Int,
+    val yearPublished: Int?,
 
     @Json(name = "min_players")
-    val minPlayers: Int,
+    val minPlayers: Int?,
 
     @Json(name = "max_players")
-    val maxPlayers: Int,
+    val maxPlayers: Int?,
 
     @Json(name = "max_playtime")
-    val maxPlayTime: Int,
+    val maxPlayTime: Int?,
 
     @Json(name = "min_age")
-    val minAge: Int,
+    val minAge: Int?,
 
     @Json(name = "description")
-    val description: String,
+    val description: String?,
 
-    @Json(name = "description")
-    val imageUrl: Uri,
+    @Json(name = "image_url")
+    val imageUrl: String?,
 
     @Json(name = "primary_publisher")
-    val publisher: String,
+    val publisher: String?,
 
     @Json(name = "mechanics")
-    val mechanics: List<GameMechanicsResponse>,
+    val mechanics: List<GameMechanicsResponse>?,
 
     @Json(name = "categories")
-    val categories: List<GameCategoriesResponse>,
+    val categories: List<GameCategoriesResponse>?,
 
     @Json(name = "average_user_rating")
-    val averageRating: Double
+    val averageRating: Double?
 )

@@ -1,5 +1,9 @@
 package com.example.square_shaped_triangle.network
 
+import com.example.square_shaped_triangle.network.response.CategoriesListResponse
+import com.example.square_shaped_triangle.network.response.GameResponse
+import com.example.square_shaped_triangle.network.response.GamesListResponse
+import com.example.square_shaped_triangle.network.response.MechanicsListResponse
 import com.example.square_shaped_triangle.network.service.GameApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -32,5 +36,26 @@ object NetworkGamesModule {
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
 
-    val gameApiService : GameApiService = retrofit.create()
+    private val gameApiService: GameApiService = retrofit.create()
+
+    suspend fun getGames(): GamesListResponse {
+        return gameApiService.getGames()
+    }
+
+    suspend fun getGameById(id: String): GameResponse {
+        return gameApiService.getGameById(id)
+    }
+
+    suspend fun getGameByName(name: String): GameResponse {
+        return gameApiService.getGameByName(name)
+    }
+
+    suspend fun getMechanics(): MechanicsListResponse {
+        return gameApiService.getMechanics()
+    }
+
+    suspend fun getCategories(): CategoriesListResponse {
+        return gameApiService.getCategories()
+    }
+
 }

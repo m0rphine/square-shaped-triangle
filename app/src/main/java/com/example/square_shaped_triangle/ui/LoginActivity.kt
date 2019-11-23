@@ -74,7 +74,12 @@ class LoginActivity : AppCompatActivity() {
         btnCreateAccount.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
-        btnLogin.setOnClickListener { emailSignInController.loginUser(etEmail.text.toString(), etPassword.text.toString()) }
+        btnLogin.setOnClickListener {
+            emailSignInController.loginUser(
+                etEmail.text.toString(),
+                etPassword.text.toString()
+            )
+        }
         google_button.setOnClickListener { googleSignInController.signIn() }
     }
 
