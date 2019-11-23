@@ -53,17 +53,6 @@
             app:layout_constraintStart_toEndOf="@id/item_game_image"
             app:layout_constraintTop_toBottomOf="@id/item_game_textView_name" />
 
-        <TextView
-            android:id="@+id/item_game_textView_designer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_3"
-            android:text="@string/game_designer"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="@id/item_game_textView_year"
-            app:layout_constraintStart_toEndOf="@id/item_game_textView_year"
-            app:layout_constraintTop_toTopOf="@id/item_game_textView_year" />
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/item_game_textView_num_players_icon"
             android:layout_width="@dimen/dp_24"
