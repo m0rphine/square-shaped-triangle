@@ -23,8 +23,7 @@ class CreateEventActivity : AppCompatActivity() {
 /*        profile_floating_action_button.setOnClickListener{
             openListGame()
         }*/
-
-        create_event_text_view_time.setOnClickListener{
+        activityEventInfo_button_delete.setOnClickListener{
             createvent()
         }
 
@@ -61,8 +60,8 @@ class CreateEventActivity : AppCompatActivity() {
             id = UUID.randomUUID().toString(),
             name = create_event_edit_text_name_event.text.toString(),
             address = create_event_edit_text_location.text.toString(),
-            minPlayers = create_event_text_view_min.text.toString().toInt(),
-            maxPlayers = create_event_text_view_max.text.toString().toInt(),
+            minPlayers = create_event_text_view_people_min.text.toString().toInt(),
+            maxPlayers = create_event_text_view_people_max.text.toString().toInt(),
             date = create_event_text_view_date.text.toString(),
             creatorId = "autor",
             state = "dasd",

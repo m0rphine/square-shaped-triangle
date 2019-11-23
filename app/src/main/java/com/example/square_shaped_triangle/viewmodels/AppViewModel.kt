@@ -30,7 +30,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     private val viewModelJob = SupervisorJob()
 
-    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
+    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.IO)
 
     private val appRepository = Repository(getDatabase(application))
 
@@ -40,7 +40,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _events = MutableLiveData<List<Event>>()
     val events: LiveData<List<Event>>
-        get() = _events
+        get() = appRepository.events
 
     private val _gameByName = MutableLiveData<GamesListResponse>()
     val gameByName: LiveData<GamesListResponse>
@@ -60,7 +60,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getGames() {
         viewModelScope.launch {
-            _games.value = NetworkGamesModule.getGames()
+            _games.postValue(NetworkGamesModule.getGames())
         }
     }
 
@@ -92,6 +92,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             appRepository.addEvent(event)
         }
     }
+
     /*fun getFavoriteGames(userId: String) {
         viewModelScope.launch {
             _favoriteGames = appRepository.favoriteGames(userId) as MutableLiveData
