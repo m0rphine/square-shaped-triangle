@@ -1,39 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:scrollbars="vertical"
-    tools:context=".ui.RegisterActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/log_sign_screens_bg">
 
-    <EditText
-        android:id="@+id/login_register"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/register_textView_hello"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/name" />
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_84"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/hello_string"
+        android:textSize="@dimen/sp_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/email_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/email" />
+        android:layout_marginStart="@dimen/dp_32"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:hint="@string/hint_email"
+        android:paddingStart="@dimen/dp_24"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@id/register_textView_hello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:layout_marginStart="@dimen/dp_32"
+        android:inputType="numberPassword|textPassword"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:hint="@string/hint_password"
+        android:paddingStart="@dimen/dp_24"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@id/email_register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/register_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register" />
+        android:layout_marginTop="@dimen/dp_130"
+        android:textAllCaps="false"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:elevation="@dimen/dp_3"
+        android:textAlignment="center"
+        android:paddingStart="@dimen/dp_64"
+        android:paddingTop="@dimen/dp_11"
+        android:paddingEnd="@dimen/dp_64"
+        android:paddingBottom="@dimen/dp_11"
+        android:text="@string/button_sign_in"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_16"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/dp_100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_register" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

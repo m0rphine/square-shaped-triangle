@@ -70,7 +70,6 @@ class LoginActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_SIGN_IN) {
             googleSignInController.handleGoogleSignIn(data)
-            eventCallback.updateUI()
         }
     }
 
