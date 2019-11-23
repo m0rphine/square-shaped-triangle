@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigation.setOnNavigationItemReselectedListener {
             val fragment: Fragment = when (it.itemId) {
-                 PROFILE -> Fragment()
-                 EVENTS -> Fragment()
-                 GAMES -> Fragment()
+                 PROFILE -> ProfileFragment.newInstance()
+                 EVENTS -> EventsFragment.newInstance()
+                 GAMES -> GamesFragment.newInstance()
                 else -> throw IllegalArgumentException()
             }
             supportFragmentManager.beginTransaction()

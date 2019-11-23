@@ -2,7 +2,6 @@ package com.example.square_shaped_triangle.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ReportFragment
 import com.example.square_shaped_triangle.database.getDatabase
 import com.example.square_shaped_triangle.repository.Repository
 import kotlinx.coroutines.CoroutineScope
