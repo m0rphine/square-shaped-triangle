@@ -44,7 +44,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFavorites"
-        android:layout_width="@dimen/dp_100"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_16"
         app:cornerRadius="@dimen/dp_8"
@@ -53,9 +53,9 @@
         android:paddingTop="@dimen/dp_8"
         android:paddingBottom="@dimen/dp_8"
         android:text="@string/button_favorite"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp_14"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_constraint" />
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
         android:layout_marginStart="@dimen/dp_32"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/dp_32"
         android:clipToPadding="false"
         android:paddingBottom="@dimen/dp_88"

@@ -39,7 +39,7 @@
     <string name="publisher_example">Catan Universe</string>
     <string name="min_players_example">2</string>
     <string name="max_players_example">8</string>
-    <string name="button_favorite">Favorite</string>
+    <string name="button_favorite">Favorite games</string>
     <string name="button_my_games">My Games</string>
     <string name="button_my_events">My Events</string>
     <string name="menu_games">Games</string>
