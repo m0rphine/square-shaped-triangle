@@ -13,6 +13,12 @@ interface AppDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertGame(game: Game)
 
+    @Query("select * from favoritegame")
+    fun getFavoriteGames(): LiveData<List<FavoriteGame>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertFavoriteGame(game: FavoriteGame)
+
     @Query("select * from event")
     fun getEvent(): LiveData<List<Event>>
 
@@ -24,7 +30,7 @@ interface AppDao {
 
 }
 
-@Database(entities = [Game::class, Event::class], version = 1)
+@Database(entities = [Game::class, Event::class, FavoriteGame::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract val dao: AppDao
 }

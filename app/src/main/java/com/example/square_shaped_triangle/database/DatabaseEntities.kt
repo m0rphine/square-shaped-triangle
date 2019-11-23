@@ -32,3 +32,18 @@ data class Event constructor(
     val state: String?,
     val game: String?
 )
+
+@Entity
+data class FavoriteGame constructor(
+    @PrimaryKey
+    val id: String,
+    val name: String?,
+    val yearPublished: Int?,
+    val minPlayers: Int?,
+    val maxPlayers: Int?,
+    val maxPlayTime: Int?,
+    val minAge: Int?,
+    val description: String?,
+    val imageUrl: String?,
+    val publisher: String?
+)

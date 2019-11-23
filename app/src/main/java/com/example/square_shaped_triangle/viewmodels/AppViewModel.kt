@@ -5,10 +5,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.square_shaped_triangle.database.Event
+import com.example.square_shaped_triangle.database.FavoriteGame
 import com.example.square_shaped_triangle.database.getDatabase
 import com.example.square_shaped_triangle.network.NetworkGamesModule
 import com.example.square_shaped_triangle.network.response.CategoriesListResponse
-import com.example.square_shaped_triangle.network.response.GameResponse
 import com.example.square_shaped_triangle.network.response.GamesListResponse
 import com.example.square_shaped_triangle.network.response.MechanicsListResponse
 import com.example.square_shaped_triangle.repository.Repository
@@ -36,7 +36,6 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     val games: LiveData<GamesListResponse>
         get() = _games
 
-    private val _events = MutableLiveData<List<Event>>()
     val events: LiveData<List<Event>>
         get() = appRepository.events
 
@@ -55,6 +54,9 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     private val _categories = MutableLiveData<CategoriesListResponse>()
     val categories: LiveData<CategoriesListResponse>
         get() = _categories
+
+    val favoriteGames: LiveData<List<FavoriteGame>>
+        get() = appRepository.favoriteGames
 
     fun getGames() {
         viewModelScope.launch {
@@ -97,22 +99,9 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /*fun getFavoriteGames(userId: String) {
+    fun addFavorite(favoriteGame: FavoriteGame) {
         viewModelScope.launch {
-            _favoriteGames = appRepository.favoriteGames(userId) as MutableLiveData
+            appRepository.addFavorite(favoriteGame)
         }
     }
-
-    fun getOwnedGames(userId: String) {
-        viewModelScope.launch {
-            _ownedGames = appRepository.ownedGames(userId) as MutableLiveData
-        }
-    }
-
-    fun getPlayers(eventId: String) {
-        viewModelScope.launch {
-            _players = appRepository.getPlayers(eventId) as MutableLiveData
-        }
-    }
-*/
 }
