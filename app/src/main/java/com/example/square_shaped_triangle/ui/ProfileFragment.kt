@@ -65,7 +65,7 @@ class ProfileFragment : Fragment() {
         context?.let {
             Log.i("name U", UserSharedPreferenceHelper.newInstance(it).name.orEmpty())
             profile_textView_nickname.text = UserSharedPreferenceHelper.newInstance(it).name
-            //profile_button_avatar.load(UserSharedPreferenceHelper.newInstance(it).uri)
+            profile_button_avatar.load(UserSharedPreferenceHelper.newInstance(it).uri)
             profile_floating_action_button.setOnClickListener {
                 TODO()
             }
